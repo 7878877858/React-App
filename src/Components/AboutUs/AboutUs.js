@@ -1,6 +1,9 @@
 import { useState } from "react";
-
+import { useEffect } from "react";
 export default function AboutUs() {
+  useEffect(() => {
+    document.title = "About Us - TradGo – Recharge & Bill Payment";   
+  }, []);
   const aboutUsList = [
     {
       title: "What Makes Tradgo Unique?",

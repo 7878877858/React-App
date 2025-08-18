@@ -1,4 +1,8 @@
+import { useEffect } from "react";
 export default function ContactUs() {
+  useEffect(() => {
+    document.title = "Contact Us - TradGo – Recharge & Bill Payment";   
+  }, []);
   return (
     <>
       <main className="other">

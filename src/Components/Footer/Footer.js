@@ -2,7 +2,7 @@ import play_store from "../../assets/image/vector/play_store.svg";
 import app_store from "../../assets/image/vector/app_store.svg";
 import tradgo_wp from "../../assets/image/vector/tradgo_wp.svg";
 
-
+import { Link } from "react-router-dom";
 function Footer() {
     return (
         <>
@@ -37,17 +37,17 @@ function Footer() {
                             <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-end links ">
                                 <div className="d-flex flex-column">
                                     <h4>Company</h4>
-                                    <a href="<?php echo base_url();?>About_us">About Us</a>
-                                    <a href="<?php echo base_url();?>Faqs">FAQs</a>
+                                    <Link to="/AboutUs">About Us</Link>
+                                    <Link to="/FAQ">FAQs</Link>
                                 </div>
                                 <div className="d-flex flex-column">
                                     <h4>Install App</h4>
-                                    <a href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235"
+                                    <a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"
                                         target="_blank" rel="noreferrer">
                                         <img src={play_store} alt="app_store" className="app_store_img pb-2" />
                                     </a>
 
-                                    <a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"
+                                    <a href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235"
                                         target="_blank" rel="noreferrer">
                                         <img src={app_store} alt="play_store" className="play_store_img" />
                                     </a>
@@ -77,10 +77,10 @@ function Footer() {
                     <div className="d-flex flex-column flex-md-row align-items-center justify-content-between pb-3">
                         <p className="mb-0 text-center text-md-start">Copyright &copy; 2024 TradGo. All Rights Reserved</p>
                         <div className="d-flex align-items-center justify-content-center gap-3">
-                            <a href="<?php echo base_url();?>Privacy_policy" className="text-white text-decoration-none">Privacy Policy</a>|
-                            <a href="<?php echo base_url();?>Terms_and_conditions" className="text-white text-decoration-none">Terms &
-                                Conditions</a>|
-                            <a href="<?php echo base_url();?>refund_policy" className="text-white text-decoration-none">Refund Policy</a>
+                            <Link to="/PrivacyPolicy" className="text-white text-decoration-none">Privacy Policy</Link>|
+                            <Link to="/TermsAndConditions" className="text-white text-decoration-none">Terms &
+                                Conditions</Link>|
+                            <Link to="/Refundpolicy" className="text-white text-decoration-none">Refund Policy</Link>
                         </div>
                     </div>
                 </div>

@@ -12,8 +12,11 @@ import BookTickets from "./Section/BookTickets";
 import GoldMembership from './Section/GoldMembership';
 import ReferEarn from './Section/ReferEarn';
 import Testimonials from './Section/Testimonials';
-
+import { useEffect } from "react";
 function Main() {
+    useEffect(() => {
+        document.title = "TradGo – Recharge & Bill Payment";
+    }, []); 
     return (
         <>
             <Hero />

@@ -12,8 +12,8 @@ function HeaderMenu() {
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
                     <div className="container">
-                        <a className="navbar-brand" href="./index.php">
-                            <img src={tradgo_sp} alt="tradgo" style={{ width: "150px" }} /></a>
+                        <Link className="navbar-brand" to="/">
+                            <img src={tradgo_sp} alt="tradgo" style={{ width: "150px" }} /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                             <span className="navbar-toggler-icon"></span>
                         </button>

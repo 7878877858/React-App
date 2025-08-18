@@ -1,6 +1,6 @@
 
 import mobile_dashboard from "../../assets/image/mobile/mobile_dashboard.png";
-
+import { useEffect } from "react";
 const item = [
     'Registration fees for membership of TradGo is non refundable.',
     'TradGo has reserve right for change/modify policy of for any retailer/distributor in future for services which is on paid basis.',
@@ -19,6 +19,9 @@ const item = [
 ];
 
 export default function FAQ() {
+    useEffect(() => {
+        document.title = "FAQ - TradGo – Recharge & Bill Payment";
+    }, []);
     return (
         <>
             <main class="other">

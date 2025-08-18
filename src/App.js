@@ -6,16 +6,22 @@ import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import TermsAndConditions from "./Components/TermsAndConditions/TermsAndConditions";
+import Refundpolicy from "./Components/RefundPolicy/RefundPolicy";
 function App() {
   return (
     <Router>
       <Header />
 
       <Routes>
-        <Route path="/" element={<Main />} />   {/* Home page */}
-        <Route path="/ContactUs" element={<ContactUs />} />  {/* Contact page */}
-        <Route path="/AboutUs" element={<AboutUs />} />  {/* Contact page */}
-        <Route path="/FAQ" element={<FAQ />} />  {/* Contact page */}
+        <Route path="/" element={<Main />} />   
+        <Route path="/ContactUs" element={<ContactUs />} /> 
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/Refundpolicy" element={<Refundpolicy />} />
       </Routes>
 
       <Footer />

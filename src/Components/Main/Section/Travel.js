@@ -16,6 +16,16 @@ const travelSmart = [
 ];
 
 export default function Travel() {
+    const handleServiceClick = () => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        let storeLink = "https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"; 
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            storeLink = "https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235";
+        }
+
+        window.open(storeLink, "_blank"); // open in new tab
+    };
     return (
         <>
             <div className="container">
@@ -55,7 +65,8 @@ export default function Travel() {
                     <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 text-center" id="travel_smart_container">
                         {travelSmart.map((item, index) => (
                             <div key={index} className="col">
-                                <div className="service-card">
+                                <div className="service-card"   onClick={handleServiceClick}
+                                style={{ cursor: "pointer" }}>
                                     <img src={item.icon} alt={item.name} className="mb-2" style={{ width: "64px", height: "64px", margin: "0 auto" }} />
                                     <p className="service-name">
                                         {item.name.split(' ').map((word, i, arr) => (
