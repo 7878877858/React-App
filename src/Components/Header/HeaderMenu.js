@@ -1,0 +1,46 @@
+import tradgo_sp from "../../assets/image/vector/tradgo_sp.svg";
+import '../../assets/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../../assets/css/main.css';
+import '../../assets/css/snow_fall.css';
+import { Link } from "react-router-dom";
+import StoreLink from "../StoreLink/StoreLink";
+
+function HeaderMenu() {
+    return (
+        <>
+            <header>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+                    <div className="container">
+                        <a className="navbar-brand" href="./index.php">
+                            <img src={tradgo_sp} alt="tradgo" style={{ width: "150px" }} /></a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/">Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/ContactUs">Contact</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/AboutUs">About Us</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/FAQ">FAQs</a>
+                                </li>
+                                <li className="nav-item">
+                                <StoreLink/>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </>
+    );
+}
+export default HeaderMenu;

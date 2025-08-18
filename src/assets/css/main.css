@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #20a7db;
+    --secondary-color: #1b1464;
+    /* --light-blue: #7f8286; */
+    --light-blue: #eff6ff;
+    --light-gray: #f6f7f8;
+    /* --light-blue: #000000; */
+    --gold-color: #dbaf3e;
+    --navbar-height: 68px;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    /* position: relative; */
+}
+
+main {
+    min-height: var(--navbar-height);
+}
+
+section {
+    /* min-height: calc(80vh - var(--navbar-height)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------- QR Code Start -------------------- */
+.qr_code {
+    position: fixed;
+    z-index: 3;
+    bottom: 16px;
+    right: 24px;
+    border-radius: 19px;
+    box-shadow: #00000059 0 5px 15px;
+    z-index: 100;
+}
+
+.animZoomIn:hover {
+    transform: scale(1.03);
+    transition: .3s;
+}
+
+.qr_code .model {
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, .8)), linear-gradient(0deg, #DCDCDC, #DCDCDC);
+    border: 1px solid #DCDCDC;
+    border-radius: 19px;
+    padding: 18px 0 2px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.qr_code .model .qr_code_img {
+    padding: 7px;
+    background: #fff;
+    border-radius: 10px;
+    width: 128px;
+    height: 128px;
+}
+
+.qr_code .model_content {
+    display: flex;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-weight: 500;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color: #fff;
+}
+
+.qr_code .model_content a {
+    text-decoration: none;
+}
+
+.qr_code .model_content a img {
+    width: auto;
+    height: 12px !important;
+}
+
+.animZoomIn {}
+
+/* -------------------- QR Code End -------------------- */
+
+/* -------------------- Hero Section Start -------------------- */
+.hero {
+    min-height: calc(100vh);
+    background: url('./../image/hero_bg.png') center center no-repeat fixed;
+    background-size: cover;
+    padding: var(--navbar-height) 0px 0px 0px;
+}
+
+.hero .model_img {
+    max-height: 80vh;
+    margin-left: 12vw;
+}
+
+.hero .title {
+    font-size: 5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero .title {
+        font-size: 3rem;
+    }
+}
+
+/* -------------------- Hero Section End -------------------- */
+
+/* -------------------- Recharge & Utility Bill Payment Section Start -------------------- */
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.services-container {
+    background: var(--light-blue);
+    border-radius: 24px;
+    padding: 0px 12px 24px 12px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 8px;
+    margin: 0px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    height: 100%;
+    max-width: 120px;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .075);
+}
+
+.service-name {
+    margin: 0;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: 16px 8px;
+    }
+
+    .service-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* -------------------- Recharge & Utility Bill Payment Section End -------------------- */
+
+/* -------------------- Features Section Start -------------------- */
+
+.features .mobile_img {
+    max-height: 60vh;
+    /* margin-left: 8vw; */
+}
+
+.animate-normal-l {
+    animation: animateInL 1500ms cubic-bezier(0.5, 0, 0, 1) forwards
+}
+
+@keyframes animateInL {
+    0% {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* -------------------- Features Section End -------------------- */
+
+/* -------------------- Connecting Operators Start -------------------- */
+#operators_container_scroll {
+  overflow: hidden;
+  background: var(--light-blue);
+  border-radius: 24px;
+  padding: 32px 16px;
+}
+
+#operators_container_scroll .container {
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+#operators_container_scroll .carousel {
+  position: absolute;
+  white-space: nowrap;
+  animation: infiscroll 8s linear infinite;
+}
+
+#operators_container_scroll .carousel:hover {
+  animation-play-state: paused;
+}
+
+#operators_container_scroll .carousel img {
+  margin: 0 1rem;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes infiscroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+
+
+/* -------------------- Connecting Operators End -------------------- */
+
+/* -------------------- Travel Time Start -------------------- */
+
+.travel_time .travel_girl {
+    max-height: 70vh;
+    margin: 0 auto;
+    animation: up_down 2s ease-in-out infinite;
+}
+
+@keyframes up_down {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.travel_time .facility_card {
+    float: right;
+    width: fit-content;
+    background-color: var(--light-blue);
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+/* -------------------- Travel Time End -------------------- */
+
+/* -------------------- Travel Smart Start -------------------- */
+
+#travel_smart_container {
+    background: var(--light-blue);
+    border-radius: 24px;
+    padding: 0px 12px 24px 12px;
+}
+
+.airplane-animation {
+    width: 50vw;
+    max-width: 500px;
+    animation: flyPlane 2s ease-in-out infinite;
+}
+
+@keyframes flyPlane {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(16px, 0px);
+        animation-timing-function: ease-in-out;
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.cloud-animation {
+    animation: cloud 6s ease-in-out infinite;
+}
+
+@keyframes cloud {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    33.33% {
+        transform: translate(4px, 8px) rotate(1deg);
+    }
+
+    66.66% {
+        transform: translate(8px, 4px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+/* -------------------- Travel Smart End -------------------- */
+
+/* -------------------- Fav Destinations Start -------------------- */
+
+#travel_destination_container {}
+
+.destination-card {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+#travel_destination_container img {
+    width: 100%;
+    max-width: 306px;
+    height: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* -------------------- Fav Destinations End -------------------- */
+
+/* -------------------- Gold Membership Start -------------------- */
+
+.gold_coin {
+    max-width: 84px;
+    max-height: 84px;
+}
+
+.text-gold {
+    color: var(--gold-color);
+}
+
+.subscription_platform_img {
+    width: 100%;
+    max-width: 128px;
+    max-height: 128px;
+    margin-top: 0px;
+}
+
+/* -------------------- Gold Membership End -------------------- */
+
+/* -------------------- About Us Start -------------------- */
+
+.comment_user_img {
+    width: 100%;
+    max-width: 40px;
+    height: 100%;
+    max-height: 40px;
+    border-radius: 50%;
+    margin-top: 0px;
+}
+
+.comment_card {
+    /* background: var(--light-blue); */
+    background: white;
+    border-radius: 36px 16px 16px 16px;
+    padding: 16px;
+}
+
+#testimonials_container .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 0;
+}
+
+#testimonials_container .rating i {
+    color: #ffd700;
+    font-size: 18px;
+}
+
+#testimonials_container .rating i.far {
+    color: #ddd;
+}
+
+#testimonials_container .rating-value {
+    margin-left: 8px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* -------------------- About Us End -------------------- */
+
+/* -------------------- Footer Start -------------------- */
+
+.footer_bg {
+    /* height: calc(100vh); */
+    background: url('./../image/footer_bg.png') center center no-repeat fixed;
+    background-size: cover;
+    padding: 70px 0px 0px 0px;
+}
+
+.links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social_links {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.social_item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.links {
+    gap: 32px;
+}
+
+.links div {
+    max-width: 200px;
+}
+
+.app_store_img,
+.play_store_img {
+    width: 100%;
+    max-width: 128px;
+    height: 100%;
+    max-height: 128px;
+    margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+    .social_links {
+        justify-content: center;
+    }
+
+    .links {
+        gap: 16px;
+    }
+
+    .links div {
+        max-width: 100%;
+    }
+}
+
+/* -------------------- Footer End -------------------- */
+
+/* -------------------- other pages Start -------------------- */
+
+.other {
+    background: var(--light-gray);
+    color: rgba(33, 37, 41, 0.75);
+    ;
+}
+
+.other_section {
+    min-height: calc(80vh - var(--navbar-height));
+    padding: var(--navbar-height) 0px 0px 0px;
+    border-radius: 24px;
+}
+
+.accordion-item .accordion-header .accordion-button {
+    background: none !important;
+}
+
+.accordion-item .accordion-header .accordion-button:focus {
+    border-bottom: 1px solid #DEE2E6;
+    border-top: 1px solid #DEE2E6;
+    outline: 5px solid #FFFFFF;
+    background: none !important;
+}
+
+/* -------------------- other pages End -------------------- */
