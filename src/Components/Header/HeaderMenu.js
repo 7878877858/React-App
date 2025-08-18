@@ -20,16 +20,16 @@ function HeaderMenu() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/">Home</a>
+                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/">Home</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/ContactUs">Contact</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/AboutUs">About Us</a>
+                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/AboutUs">About Us</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-secondary fs-6 fw-semibold ms-2" href="/FAQ">FAQs</a>
+                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/FAQ">FAQs</Link>
                                 </li>
                                 <li className="nav-item">
                                 <StoreLink/>
