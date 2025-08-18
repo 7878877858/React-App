@@ -2,7 +2,6 @@ import tradgo_sp from "../../assets/image/vector/tradgo_sp.svg";
 import '../../assets/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../../assets/css/main.css';
-import '../../assets/css/snow_fall.css';
 import { Link } from "react-router-dom";
 import StoreLink from "../StoreLink/StoreLink";
 

@@ -24,35 +24,35 @@ export default function FAQ() {
     }, []);
     return (
         <>
-            <main class="other">
-                <section class="other_section">
-                    <div class="container py-5">
-                        <h1 class="text-center fw-semibold mb-4">
-                            <span class="text-black">FAQ</span>
-                            <span class="text-primary">s</span>
+            <main className="other">
+                <section className="other_section">
+                    <div className="container py-5">
+                        <h1 className="text-center fw-semibold mb-4">
+                            <span className="text-black">FAQ</span>
+                            <span className="text-primary">s</span>
                         </h1>
-                        <div class="row">
-                            <div class="col">
-                                <div class="bg-white shadow rounded p-3">
-                                    <div class="container"><br />
+                        <div className="row">
+                            <div className="col">
+                                <div className="bg-white shadow rounded p-3">
+                                    <div className="container"><br />
                                         <ul id="faqs_list">
                                             {item.map((faq, index) => (
-                                                <li key={index} class="mb-3">
+                                                <li key={index} className="mb-3">
                                                     {faq}
                                                 </li>
                                             ))}
                                         </ul>
 
                                         <hr />
-                                        <div class="row align-items-center">
-                                            <div class="col-5 text-end">
+                                        <div className="row align-items-center">
+                                            <div className="col-5 text-end">
                                                 <h4>Go eBill - Download the IOS Super App</h4>
                                                 <div>Download the app now &amp; make convenience a part of your life.</div>
                                             </div>
-                                            <div class="col-2 mb-2"><img src={mobile_dashboard}
+                                            <div className="col-2 mb-2"><img src={mobile_dashboard}
                                                 alt="SWORLD" style={{ width: "100%" }} />
                                             </div>
-                                            <div class="col-5">
+                                            <div className="col-5">
                                                 <h4>Go eBill - Download the Android Super App</h4>
                                                 <div>Download the app now &amp; start earning
                                                     smartly.</div>
