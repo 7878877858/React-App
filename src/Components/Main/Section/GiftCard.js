@@ -21,7 +21,16 @@ const giftcardTypes = [
 // Import images
 
 export default function Giftcard() {
-    
+    const handleServiceClick = () => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        let storeLink = "https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"; 
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            storeLink = "https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235";
+        }
+
+        window.open(storeLink, "_blank"); // open in new tab
+    };
 const scrollingOperators = [...giftcardTypes, ...giftcardTypes];
     return (
         <div
@@ -58,8 +67,8 @@ const scrollingOperators = [...giftcardTypes, ...giftcardTypes];
                         {scrollingOperators.map((item, index) => (
                             <div
                                 key={index}
-                                className="item-card redirect-link"
-                                style={{ backgroundColor: `#${item.color}` }}
+                                className="item-card redirect-link" onClick={handleServiceClick} style={{ cursor: "pointer", backgroundColor: `#${item.color}` }}
+                                
                             >
                                 <img
                                     src={item.icon}

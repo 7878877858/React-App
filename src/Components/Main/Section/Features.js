@@ -1,5 +1,7 @@
 
 import appDashboard from '../../../assets/image/mobile/app_dashboard.png';
+import mobileDashboard from '../../../assets/image/mobile/our_all_services.png';
+import newDashboard from '../../../assets/image/mobile/new_dashboard_4.png';
 const features = [
   {
     title: 'Mobile Recharge',
@@ -18,7 +20,7 @@ const features = [
       'Enjoy fast, hassle-free recharges for all major operators, including Airtel DTH, Tata Sky, Videocon D2H, Dish TV, and more—all in one place!',
       'With 24/7 support via live chat and call, TradGo ensures uninterrupted entertainment by addressing your queries and issues promptly. Recharge smarter with TradGo today!'
     ],
-    src: appDashboard,
+    src: mobileDashboard,
     alt: 'app_dashboard'
   },
   {
@@ -28,7 +30,7 @@ const features = [
       'Enjoy instant payment processing to avoid late fees and ensure uninterrupted power supply. Simply select the electricity bill option, enter your consumer number, fetch your bill details, and complete your payment in just a few clicks!',
       'Switch to TradGo for a seamless bill payment experience today.'
     ],
-    src: appDashboard,
+    src: newDashboard,
     alt: 'app_dashboard'
   }
 ];
@@ -41,7 +43,7 @@ function Features() {
           <div
             className="row align-items-center position-sticky bg-white"
             style={{ height: 'calc(100vh - 68px)', top: '68px' }}
-            key={index}
+            key={index} 
           >
             <div className="col-12 col-md-8">
               <div className="d-flex flex-column w-100 h-100">
@@ -58,7 +60,7 @@ function Features() {
               </div>
             </div>
             <div className="col-md-4 d-none d-md-block">
-              <div className="d-flex align-items-center w-100 h-100">
+              <div className="d-flex align-items-center justify-content-end w-100 h-100">
                 <img
                   src={feature.src}
                   alt={feature.alt}

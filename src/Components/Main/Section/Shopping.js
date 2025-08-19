@@ -22,6 +22,16 @@ const products = [
 ];
 
 export default function Shopping() {
+    const handleServiceClick = () => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        let storeLink = "https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"; 
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            storeLink = "https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235";
+        }
+
+        window.open(storeLink, "_blank"); // open in new tab
+    };
     const scrollingOperators = [...products, ...products];
 
     return (
@@ -37,7 +47,7 @@ export default function Shopping() {
                     <div className="item-slider">
                         <div className="item-product-list" id="shopping_product_container">
                             {scrollingOperators.map((item, index) => (
-                                <div key={index} className="item-card">
+                                <div key={index} className="item-card" onClick={handleServiceClick} style={{ cursor: "pointer" }}>
                                     <img src={item.icon} alt={item.name} className="product-image" />
                                     <img src={wooden_shadow}alt="shadow"  style={{ aspectRatio: "6 / 1" }} />
                                     <h3 className="product-name">{item.name}</h3>
