@@ -13,6 +13,8 @@ import GoldMembership from './Section/GoldMembership';
 import ReferEarn from './Section/ReferEarn';
 import Testimonials from './Section/Testimonials';
 import { useEffect } from "react";
+import Giftcard from './Section/GiftCard';
+import Shopping from './Section/Shopping';
 function Main() {
     useEffect(() => {
         document.title = "TradGo – Recharge & Bill Payment";
@@ -23,6 +25,8 @@ function Main() {
             <RechargeBillPayments />
             <Features />
             <Connecting />
+            <Giftcard />
+            <Shopping />
             <Travel />
             <Airplane />
             <BookTickets />

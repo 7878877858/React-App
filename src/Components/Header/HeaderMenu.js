@@ -22,7 +22,7 @@ function HeaderMenu() {
                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/ContactUs">Contact</Link>
+                                    <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/ContactUs">Contact Us</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/AboutUs">About Us</Link>

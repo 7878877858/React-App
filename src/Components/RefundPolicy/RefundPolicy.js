@@ -27,21 +27,21 @@ export default function Refundpolicy() {
     }, []);
     return (
         <>
-            <main class="other">
-                <section class="other_section">
-                    <div class="container py-5">
-                        <h1 class="text-center fw-semibold mb-4">
-                            <span class="text-black">Refund</span>
-                            <span class="text-primary">Policy</span>
+            <main className="other">
+                <section className="other_section">
+                    <div className="container py-5">
+                        <h1 className="text-center fw-semibold mb-4">
+                            <span className="text-black">Refund</span>
+                            <span className="text-primary">Policy</span>
                         </h1>
-                        <div class="row">
-                            <div class="col">
-                                <div class="bg-white shadow rounded p-3">
-                                    <div class="container"><br />
+                        <div className="row">
+                            <div className="col">
+                                <div className="bg-white shadow rounded p-3">
+                                    <div className="container"><br />
                                         <div id="refund_list"></div>
-                                        <ul class="list-unstyled">
+                                        <ul className="list-unstyled">
                                             {item.map((text, index) => (
-                                                <li key={index} class="mb-2">
+                                                <li key={index} className="mb-2">
                                                     {text}
                                                 </li>
                                             ))}

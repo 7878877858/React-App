@@ -99,7 +99,11 @@ function Hero() {
           <div className="col-md-6 d-flex align-items-center justify-content-end">
             <div className="d-flex flex-column gap-2">
               <h1 className="fw-bold mb-4 title">Apki Digital Duniya</h1>
-              <p>TradGo is a versatile online service provider...</p>
+              <p>TradGo is a versatile online service provider offering a wide range of services to
+                simplify your life. From mobile recharges to bill payments like electricity,
+                insurance, FASTag recharge, water bills, and much more, TradGo has you covered. <br /> Experience
+                quick, secure, and hassle-free transactions all in one app—designed to make your
+                everyday payments effortless.</p>
               {/* Stats Section */}
               <div
                 style={{ width: 'min-content' }}

@@ -21,21 +21,21 @@ export default function TermsAndConditions(){
     }, []);
     return (
         <>
-             <main class="other">
-        <section class="other_section">
-            <div class="container py-5">
-                <h1 class="text-center fw-semibold mb-4">
-                    <span class="text-black">Terms &</span>
-                    <span class="text-primary">Conditions</span>
+             <main className="other">
+        <section className="other_section">
+            <div className="container py-5">
+                <h1 className="text-center fw-semibold mb-4">
+                    <span className="text-black">Terms &</span>
+                    <span className="text-primary">Conditions</span>
                 </h1>
-                <div class="row">
-                    <div class="col">
-                        <div class="bg-white shadow rounded p-3">
-                            <div class="container"><br/>
+                <div className="row">
+                    <div className="col">
+                        <div className="bg-white shadow rounded p-3">
+                            <div className="container"><br/>
                                 <ul id="faqs_list">
                                     {item.map((text, index) => (
-                                        <li key={index} className="mb-3">
-                                            <p className="text-muted">{text}</p>
+                                        <li key={index} classNameName="mb-3">
+                                            <p classNameName="text-muted">{text}</p>
                                         </li>
                                     ))}
                                 </ul>

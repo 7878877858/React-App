@@ -38,12 +38,18 @@ section {
 /* -------------------- QR Code Start -------------------- */
 .qr_code {
     position: fixed;
-    z-index: 3;
     bottom: 16px;
     right: 24px;
     border-radius: 19px;
     box-shadow: #00000059 0 5px 15px;
     z-index: 100;
+    transition: all 0.4s ease-in-out;
+}
+
+.qr_code.hide {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease-in-out;
 }
 
 .animZoomIn:hover {
@@ -193,6 +199,7 @@ section {
 /* -------------------- Features Section Start -------------------- */
 
 .features .mobile_img {
+    max-width: 100%;
     max-height: 60vh;
     /* margin-left: 8vw; */
 }
@@ -216,52 +223,340 @@ section {
 /* -------------------- Features Section End -------------------- */
 
 /* -------------------- Connecting Operators Start -------------------- */
+
 #operators_container_scroll {
-  overflow: hidden;
-  background: var(--light-blue);
-  border-radius: 24px;
-  padding: 32px 16px;
+    overflow: hidden;
+    background: var(--light-blue);
+    border-radius: 24px;
+    padding: 32px 16px;
 }
 
 #operators_container_scroll .container {
-  min-height: 100px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 #operators_container_scroll .carousel {
-  position: absolute;
-  white-space: nowrap;
-  animation: infiscroll 8s linear infinite;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    top: 0px;
+    left: 0px;
+    animation: infiscroll 8s linear infinite;
 }
 
 #operators_container_scroll .carousel:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+#operators_container_scroll .carousel:hover {
+    animation-play-state: paused;
 }
 
 #operators_container_scroll .carousel img {
-  margin: 0 1rem;
-  width: 100px;
-  height: 100px;
+    margin: 0 1rem;
+    width: 100px;
+    height: 100px;
+    /* max-height: 300px; */
+    /* height: 100%; */
+    /* object-fit: cover; */
 }
 
 @keyframes infiscroll {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    #operators_container_scroll {
+        padding: 16px 8px;
+    }
+
+    #operators_container_scroll .container {
+        min-height: 64px;
+    }
+
+    #operators_container_scroll .carousel img {
+        margin: 0 0.5rem;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/* -------------------- Connecting Operators End -------------------- */
+
+/* -------------------- Gift Card Start -------------------- */
+
+
+.giftcard_container {
+  background-image: url('../../assets/image/giftcard_types/getwave_03.svg');
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  animation: moveBg 10s linear infinite;
+}
+
+@keyframes moveBg {
   0% {
-    transform: translate(0, 0);
+    background-position: 0 0;
   }
   100% {
-    transform: translate(-50%, 0);
+    background-position: 917px 0; /* Adjust this value as per image width/speed */
   }
 }
 
+.giftcard_container .giftcard_boy {
+    width: 100%; 
+    max-width: 400px; 
+    aspect-ratio: 6/7;
+}
+
+.giftcard_container .giftcard {
+    width: 100%; 
+    max-width: 150px; 
+    aspect-ratio: 5/4;
+}
+
+.giftcard_container .taxt-view-lg {
+    font-size: 120px;
+    font-weight: bold;
+    color: #DBAF3E;
+}
+
+.giftcard_container .taxt-view-md {
+    font-size: 40px; 
+    color: #2563EB;
+}
+
+.giftcard_container .taxt-view-sm {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .giftcard_container .giftcard_boy {
+        max-width: 175px; 
+    }
+
+    .giftcard_container .giftcard {
+        max-width: 100px;
+    }
+
+    .giftcard_container .taxt-view-lg {
+        margin-top: 16px;
+        font-size: 40px;
+    }
+
+    .giftcard_container .taxt-view-md {
+        font-size: 24px;
+    }
+
+    .giftcard_container .taxt-view-sm {
+        font-size: 16px;
+    }
+}
 
 
-/* -------------------- Connecting Operators End -------------------- */
+/* -------------------- Gift Card End -------------------- */
+
+/* -------------------- Shopping Start -------------------- */
+
+.shopping_container p {
+    font-size: 20px; 
+    max-width:925px; 
+    margin: 0px auto;
+}
+
+
+@media (max-width: 768px) {
+    .shopping_container p {
+        font-size: 16px; 
+    }
+}
+
+/* -------------------- Shopping End -------------------- */
+
+/* -------------------- Item Slider Start -------------------- */
+
+.item-slider {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.item-list {
+    display: flex;
+    animation: slide 15s linear infinite;
+}
+
+.item-product-list {
+    display: flex;
+    animation: slide 20s linear infinite;
+}
+
+.item-card {
+    flex: 0 0 200px;
+    margin: 8px 12px;
+    background: #fff;
+    /*border: 1px solid #ddd;*/
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+    transform: scale(1.1);
+}
+
+.item-card img {
+    width: 100%;
+    max-width: 150px;
+    /*object-fit: cover;*/
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+}
+
+.item-card h3 {
+    font-size: 1.2em;
+    margin: 16px 0 0 0;
+    color: #333;
+}
+
+.item-card p {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.item-card .price {
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.item-list:hover {
+    animation-play-state: paused;
+}
+
+.item-product-list:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+
+    .item-slider {
+        width: 100%;
+        margin: 40px auto 0 auto;
+    }
+
+    .item-card {
+        flex: 0 0 100px;
+        margin: 4px 8px;
+        padding: 8px;
+    }
+
+    .item-card h3 {
+        font-size: 0.8em;
+        margin: 8px 0 0 0;
+    }
+}
+
+/* -------------------- Item Slider End -------------------- */
+
+/* -------------------- Item Corner Start -------------------- */
+
+.csshub-ribbon-wrapper {
+    width: 106px;
+    height: 108px;
+    overflow: hidden;
+    position: absolute;
+    top: -6px;
+    right: -4px;
+}
+
+.csshub-ribbon {
+  font-family: 'sans-serif';
+  line-height: 12px;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: 27px;
+  top: 16px;
+  width: 110px;
+  background-color: #20a7db;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  box-shadow: -3px 5px 6px -5px rgba(0, 0, 0, 0.5);
+  outline: 1px dotted #fff;
+  outline-offset: -4px;
+/*  background-image: radial-gradient(circle farthest-side, #FF1C1A, #BF0B00);*/
+  text-shadow: 2px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.csshub-ribbon:before, .csshub-ribbon:after {
+  content: "";
+  border-top: 4px solid #136483;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: absolute;
+  bottom: -4px;  }
+
+.csshub-ribbon:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 4px solid #136483;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid #136483; }
+
+.csshub-ribbon:after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 100%;
+  z-index: -1;
+  border-left: 4px solid transparent;
+  border-right: 4px solid #136483;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid #136483; 
+}
+
+/* -------------------- Item Corner End -------------------- */
 
 /* -------------------- Travel Time Start -------------------- */
 
 .travel_time .travel_girl {
+    width: 100%;
+    max-width: 414px;
     max-height: 70vh;
     margin: 0 auto;
     animation: up_down 2s ease-in-out infinite;
@@ -384,6 +679,12 @@ section {
 }
 
 /* -------------------- Gold Membership End -------------------- */
+
+/* -------------------- Refer And Earn Start -------------------- */
+
+.refer_and_earn_container{}
+
+/* -------------------- Refer And Earn End -------------------- */
 
 /* -------------------- About Us Start -------------------- */
 
