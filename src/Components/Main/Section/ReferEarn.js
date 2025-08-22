@@ -9,9 +9,9 @@ export default function ReferEarn() {
                             <img src={refer_and_earn} alt="refer_and_earn" className="w-100" />
                         </div>
                         <div className="col-md-6 text-white">
-                            <p className="text-center fw-bold mb-1" style={{fontsize: "10rem"}}>Refer & earn</p>
-                            <p className="text-center mb-0" style={{fontsize: "2rem"}}>Share the app and get rewarded</p>
-
+                            <p className="text-center fw-bold mb-1 fs-1">Refer & earn</p>
+                            <p className="text-center mb-0 fs-4 ">Share the app and get rewarded</p>
+                                    <hr />
                             <div className="d-flex flex-column gap-3">
                                 <p className="fs-4 mb-0">How it work?</p>
                                 <div className="d-flex align-items-center justify-content-start gap-3">

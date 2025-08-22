@@ -15,12 +15,29 @@ import Testimonials from './Section/Testimonials';
 import { useEffect } from "react";
 import Giftcard from './Section/GiftCard';
 import Shopping from './Section/Shopping';
+import { Helmet } from "react-helmet";
 function Main() {
     useEffect(() => {
-        document.title = "TradGo – Recharge & Bill Payment";
-    }, []); 
+        document.title = "Dashboard | TradGo Recharge & Bill Payment";
+    }, []);
     return (
         <>
+            <Helmet>
+                <title>Mobile Recharge & Bill Payment App | TradGo</title>
+                <meta name="description" content="TradGo – Fast and secure mobile recharge & bill payment app. Recharge prepaid, pay postpaid, DTH, electricity, gas, and water bills online." />
+                <meta name="keywords" content="Mobile Recharge Online, Online Bill Payment, Prepaid Recharge, Postpaid Bill Payment, DTH Recharge Online, Electricity Bill Payment, Gas Bill Payment, Water Bill Payment, TradGo Recharge App, Secure Online Recharge, Recharge Offers, Cashback on Recharge" />
+
+                {/* Open Graph */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Mobile Recharge & Bill Payment App | TradGo" />
+                <meta property="og:description" content="Your recharge & bill payment app" />
+                <meta property="og:image" content="image/og_image.png" />
+                <meta property="og:url" content="https://tradgo.in" />
+
+                {/* Favicon */}
+                <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
+                <link rel="canonical" href="https://tradgo.in" />
+            </Helmet>
             <Hero />
             <RechargeBillPayments />
             <Features />

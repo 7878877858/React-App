@@ -19,8 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />   
         <Route path="/contact" element={<ContactUs />} /> 
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/about_us" element={<AboutUs />} />
+        <Route path="/faqs" element={<FAQ />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Refundpolicy" element={<Refundpolicy />} />

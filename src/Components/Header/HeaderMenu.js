@@ -87,7 +87,7 @@ function HeaderMenu() {
                         </Nav.Link>
                         <Nav.Link
                             as={Link}
-                            to="/AboutUs"
+                            to="/about_us"
                             className="text-secondary fs-6 fw-semibold ms-2"
                             onClick={() => setExpanded(false)}
                         >
@@ -95,7 +95,7 @@ function HeaderMenu() {
                         </Nav.Link>
                         <Nav.Link
                             as={Link}
-                            to="/FAQ"
+                            to="/faqs"
                             className="text-secondary fs-6 fw-semibold ms-2"
                             onClick={() => setExpanded(false)}
                         >

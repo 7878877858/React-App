@@ -1,10 +1,55 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 export default function ContactUs() {
   useEffect(() => {
     document.title = "Contact Us - TradGo – Recharge & Bill Payment";   
   }, []);
   return (
     <>
+     <Helmet>
+        <title>Contact Us | TradGo Recharge & Bill Payment</title>
+        <meta
+          name="description"
+          content="Get in touch with TradGo for any support or inquiries related to mobile recharge, bill payment, and services."
+        />
+        <meta
+          name="keywords"
+          content="TradGo contact, recharge support, bill payment help, TradGo customer service"
+        />
+        <link rel="canonical" href="https://tradgo.in/contact" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Contact Us | TradGo Recharge & Bill Payment"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with TradGo for any support or inquiries related to mobile recharge, bill payment, and services."
+        />
+        <meta
+          property="og:image"
+          content="https://tradgo.in/assets/image/og/contact_us.png"
+        />
+        <meta property="og:url" content="https://tradgo.in/contact" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact Us | TradGo Recharge & Bill Payment"
+        />
+        <meta
+          name="twitter:description"
+          content="Get in touch with TradGo for any support or inquiries related to mobile recharge, bill payment, and services."
+        />
+        <meta
+          name="twitter:image"
+          content="https://tradgo.in/assets/image/og/contact_us.png"
+        />
+      </Helmet>
       <main className="other">
         <section className="other_section">
           <div className="container py-5">

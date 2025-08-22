@@ -37,8 +37,8 @@ function Footer() {
                             <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-end links ">
                                 <div className="d-flex flex-column">
                                     <h4>Company</h4>
-                                    <Link to="/AboutUs">About Us</Link>
-                                    <Link to="/FAQ">FAQs</Link>
+                                    <Link to="/about_us">About Us</Link>
+                                    <Link to="/faqs">FAQs</Link>
                                 </div>
                                 <div className="d-flex flex-column">
                                     <h4>Install App</h4>

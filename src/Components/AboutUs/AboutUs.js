@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 export default function AboutUs() {
   useEffect(() => {
-    document.title = "About Us - TradGo – Recharge & Bill Payment";   
+    document.title = "About Us - TradGo – Recharge & Bill Payment";
   }, []);
   const aboutUsList = [
     {
@@ -41,79 +42,104 @@ export default function AboutUs() {
   };
 
   return (
-    <main className="other">
-      <section className="other_section">
-        <div className="container py-5">
-          <h1 className="text-center fw-semibold mb-4">
-            <span className="text-black">About</span>
-            <span className="text-primary">Us</span>
-          </h1>
+    <>
+    <Helmet>
+  <title>About Us | TradGo Recharge & Bill Payment</title>
+  <meta name="description" content="Learn about TradGo – India’s fastest mobile recharge and utility bill payment platform. Discover our mission, vision, and company story." />
+  <meta name="keywords" content="TradGo, About TradGo, recharge app, bill payment, company info, India recharge platform" />
+  <link rel="canonical" href="https://tradgo.in/about-us" />
 
-          <div className="row">
-            <div className="col">
-              <div className="bg-white shadow rounded p-3">
-                <div className="container">
-                  <br />
-                  <p>
-                    Tradgo is a well-known name in the world of payment app
-                    serving over 1 Lakh users across the country. Over the years
-                    Tradgo has transformed to become one of the leading
-                    financial services and investment apps in India. From
-                    recharge &amp; bill payments to investment &amp; lending,
-                    Tradgo lets you do it all effortlessly. Tradgo has always
-                    been known for offering safe and seamless UPI payments,
-                    utility bill payments, mobile/DTH recharges, Pay Later
-                    solutions etc. With a robust infrastructure supporting
-                    multiple payment methods, Tradgo users can choose to pay via
-                    Wallet, UPI, Net Banking, Debit Cards and Credit Cards to
-                    spend across categories at their favourite offline or online
-                    merchant. On the lending front.
-                  </p>
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-                  <div id="accordionToggle">
-                    <div className="row">
-                      <div
-                        className="accordion accordion-flush"
-                        id="about_us_accordion"
-                      >
-                        {aboutUsList.map((item, index) => (
-                          <div className="accordion-item" key={index}>
-                            <h2 className="accordion-header" id={`h2_${index}`}>
-                              <button
-                                className={`accordion-button ${
-                                  activeIndex === index ? "" : "collapsed"
-                                }`}
-                                type="button"
-                                onClick={() => toggleAccordion(index)}
+  {/* Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us | TradGo Recharge & Bill Payment" />
+  <meta property="og:description" content="Learn about TradGo – India’s fastest mobile recharge and utility bill payment platform. Discover our mission, vision, and company story." />
+  <meta property="og:image" content="https://tradgo.in/assets/image/og/about_us.png" />
+  <meta property="og:url" content="https://tradgo.in/about-us" />
+  <meta property="og:site_name" content="TradGo" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | TradGo Recharge & Bill Payment" />
+  <meta name="twitter:description" content="Learn about TradGo – India’s fastest mobile recharge and utility bill payment platform. Discover our mission, vision, and company story." />
+  <meta name="twitter:image" content="https://tradgo.in/assets/image/og/about_us.png" />
+  <meta name="twitter:site" content="@TradGo" />
+</Helmet>
+
+      <main className="other">
+        <section className="other_section">
+          <div className="container py-5">
+            <h1 className="text-center fw-semibold mb-4">
+              <span className="text-black">About</span>
+              <span className="text-primary"> Us</span>
+            </h1>
+
+            <div className="row">
+              <div className="col">
+                <div className="bg-white shadow rounded p-3">
+                  <div className="container">
+                    <br />
+                    <p>
+                      Tradgo is a well-known name in the world of payment app
+                      serving over 1 Lakh users across the country. Over the years
+                      Tradgo has transformed to become one of the leading
+                      financial services and investment apps in India. From
+                      recharge &amp; bill payments to investment &amp; lending,
+                      Tradgo lets you do it all effortlessly. Tradgo has always
+                      been known for offering safe and seamless UPI payments,
+                      utility bill payments, mobile/DTH recharges, Pay Later
+                      solutions etc. With a robust infrastructure supporting
+                      multiple payment methods, Tradgo users can choose to pay via
+                      Wallet, UPI, Net Banking, Debit Cards and Credit Cards to
+                      spend across categories at their favourite offline or online
+                      merchant. On the lending front.
+                    </p>
+
+                    <div id="accordionToggle">
+                      <div className="row">
+                        <div
+                          className="accordion accordion-flush"
+                          id="about_us_accordion"
+                        >
+                          {aboutUsList.map((item, index) => (
+                            <div className="accordion-item" key={index}>
+                              <h2 className="accordion-header" id={`h2_${index}`}>
+                                <button
+                                  className={`accordion-button ${activeIndex === index ? "" : "collapsed"
+                                    }`}
+                                  type="button"
+                                  onClick={() => toggleAccordion(index)}
+                                >
+                                  {item.title}
+                                </button>
+                              </h2>
+                              <div
+                                id={`accordion_${index}`}
+                                className={`accordion-collapse collapse ${activeIndex === index ? "show" : ""
+                                  }`}
+                                aria-labelledby={`h2_${index}`}
+                                data-bs-parent="#about_us_accordion"
                               >
-                                {item.title}
-                              </button>
-                            </h2>
-                            <div
-                              id={`accordion_${index}`}
-                              className={`accordion-collapse collapse ${
-                                activeIndex === index ? "show" : ""
-                              }`}
-                              aria-labelledby={`h2_${index}`}
-                              data-bs-parent="#about_us_accordion"
-                            >
-                              <div className="accordion-body">
-                                {item.li.map((line, i) => (
-                                  <div
-                                    key={i}
-                                    className="d-flex align-items-start mb-3"
-                                  >
-                                    <i
-                                      className="fa fa-circle mx-3 mt-2"
-                                      style={{ fontSize: "8px" }}
-                                    ></i>
-                                    <div>{line}</div>
-                                  </div>
-                                ))}
+                                <div className="accordion-body">
+                                  {item.li.map((line, i) => (
+                                    <div
+                                      key={i}
+                                      className="d-flex align-items-start mb-3"
+                                    >
+                                      <i
+                                        className="fa fa-circle mx-3 mt-2"
+                                        style={{ fontSize: "8px" }}
+                                      ></i>
+                                      <div>{line}</div>
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -121,8 +147,9 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
+
   );
 }
