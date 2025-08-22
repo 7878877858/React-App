@@ -294,7 +294,31 @@ section {
 /* -------------------- Connecting Operators End -------------------- */
 
 /* -------------------- Gift Card Start -------------------- */
+.item-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 
+.item-list {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  transform: translateX(0);
+}
+
+.hover-scroll:hover {
+  animation: scrollRound 15s linear infinite;
+}
+
+@keyframes scrollRound {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 .giftcard_container {
   background-image: url('../../assets/image/giftcard_types/getwave_03.svg');
