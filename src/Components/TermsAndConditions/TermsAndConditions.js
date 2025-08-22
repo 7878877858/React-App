@@ -34,8 +34,8 @@ export default function TermsAndConditions(){
                             <div className="container"><br/>
                                 <ul id="faqs_list">
                                     {item.map((text, index) => (
-                                        <li key={index} classNameName="mb-3">
-                                            <p classNameName="text-muted">{text}</p>
+                                        <li key={index} className="mb-3">
+                                            <p className="text-muted">{text}</p>
                                         </li>
                                     ))}
                                 </ul>

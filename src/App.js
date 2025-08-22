@@ -9,11 +9,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "./Components/TermsAndConditions/TermsAndConditions";
 import Refundpolicy from "./Components/RefundPolicy/RefundPolicy";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 function App() {
   return (
     <Router>
+    <ScrollToTop />
       <Header />
-
+      
       <Routes>
         <Route path="/" element={<Main />} />   
         <Route path="/ContactUs" element={<ContactUs />} /> 
