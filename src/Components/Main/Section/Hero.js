@@ -105,7 +105,7 @@ function Hero() {
                             <li><span className="bg-success px-2 py-1 rounded-circle"><i className="fa fa-check" aria-hidden="true"></i></span> <span className="fs-6">Bus Booking In Just Few Clicks</span></li>
                             <li><span className="bg-success px-2 py-1 rounded-circle"><i className="fa fa-check" aria-hidden="true"></i></span> <span className="fs-6">Shop Smart With TradGo</span></li>
                         </ul>
-                        <p className="d-none d-sm-block" style={{maxWidth:"750px"}}>TradGo is a versatile online service provider offering a wide range of services to simplify your life. From mobile recharges to bill payments like electricity, insurance, FASTag recharge, water bills, and much more, TradGo has you covered. <br/>Experience quick, secure, and hassle-free transactions all in one app—designed to make your everyday payments effortless.</p>
+                        {/* <p className="d-none d-sm-block" style={{maxWidth:"750px"}}>TradGo is a versatile online service provider offering a wide range of services to simplify your life. From mobile recharges to bill payments like electricity, insurance, FASTag recharge, water bills, and much more, TradGo has you covered. <br/>Experience quick, secure, and hassle-free transactions all in one app—designed to make your everyday payments effortless.</p> */}
                         <div className="d-flex align-items-center justify-content-center bg-white rounded py-2 py-lg-3 px-3 px-lg-4 gap-3 gap-lg-4">
                             <div className="text-center">
                                 <p className="text-secondary display-4 fs-3 fw-bold mb-0"> 5M<span>+</span> </p>

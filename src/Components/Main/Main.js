@@ -12,7 +12,7 @@ import Testimonials from './Section/Testimonials';
 import Giftcard from './Section/GiftCard';
 import Shopping from './Section/Shopping';
 import { Helmet } from "react-helmet";
-
+import $ from 'jquery';
 function Main() {
 //   const [deviceId, setDeviceId] = useState("");
 
@@ -39,7 +39,7 @@ function Main() {
                 <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
                 <link rel="canonical" href="https://tradgo.in" />
             </Helmet>
-            <div style={{ height: 80 }}></div>
+            <div style={{ height: 60 }}></div>
             <Hero />
             <RechargeBillPayments />
             <Features />

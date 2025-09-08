@@ -15,12 +15,12 @@ function HeaderMenu() {
     <>
       <header className="sticky">
         {/* Top strip */}
-        <div
+        {/* <div
           className="px-3 py-2 w-full text-center fw-semibold fs-5 text-center text-white"
           style={{ backgroundColor: "#1b1464" }}
         >
           Apki Digital Duniya
-        </div>
+        </div> */}
 
         {/* Navbar */}
         <Navbar
@@ -31,7 +31,7 @@ function HeaderMenu() {
           className="shadow-sm"
           expanded={expanded}
           onToggle={(isExpanded) => setExpanded(isExpanded)}
-          style={{ top: "45px" }} // push below top strip
+          style={{ top: "0px" }} // push below top strip
         >
           <Container>
             {/* Logo */}
