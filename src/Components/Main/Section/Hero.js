@@ -1,4 +1,4 @@
-import modelBoy from '../../../assets/image/model/model_boy.png';
+import modelBoy from '../../../assets/image/model/model_boy_2.png';
 import '../../../assets/css/main.css';
 import '../../../assets/css/snow_fall.css';
 import { useEffect } from 'react';

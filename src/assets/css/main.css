@@ -160,7 +160,7 @@ img.loaded {
 
 .hero .bg-hero {
     /* min-height: calc(100vh - 114px); */
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100vw;
     background: url('./../image/hero_bg.png') center center no-repeat fixed;
     background-size: cover;
