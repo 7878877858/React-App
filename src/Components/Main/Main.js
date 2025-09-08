@@ -12,16 +12,15 @@ import Testimonials from './Section/Testimonials';
 import Giftcard from './Section/GiftCard';
 import Shopping from './Section/Shopping';
 import { Helmet } from "react-helmet";
-import React, { useEffect, useState } from "react";
-import { getDeviceId } from "../../utils/getDeviceId"; // Assuming you have a utility function to get device ID
+
 function Main() {
-    const [deviceId, setDeviceId] = useState("");
-    useEffect(() => {
-        document.title = "Dashboard | TradGo Recharge & Bill Payment";
-    }, []);
-    useEffect(() => {
-        setDeviceId(getDeviceId());
-    }, []);
+//   const [deviceId, setDeviceId] = useState("");
+
+// useEffect(() => {
+//   const id = getDeviceId();
+//   setDeviceId(id);
+//   console.log("Device ID:", id); // ✅ હવે used ગણાશે
+// }, []);
     return (
         <>
             <Helmet>

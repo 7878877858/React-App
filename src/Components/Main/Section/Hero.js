@@ -111,8 +111,8 @@ function Hero() {
                                 <p className="text-secondary display-4 fs-3 fw-bold mb-0"> 5M<span>+</span> </p>
                                 <p className="fs-5 text-black mb-0">Users</p>
                             </div>
-                            <div style={{height:"60px",width:"3px",backgroundImage:"'linear-gradient(0deg, #20a6db00, #20a7db, #20a7db00)'"}}>
-                            </div>
+                            <div style={{height:"60px",width:"3px",backgroundImage:"linear-gradient(0deg, #20a6db00, #20a7db, #20a7db00)"}}/>
+                           
                             <div className="text-center">
                                 <p className="text-secondary display-4 fs-3 fw-bold mb-0">4.7<span
                                         className="text-warning">★</span></p>

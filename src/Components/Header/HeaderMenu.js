@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../../assets/css/main.css";
 import LoginModal from "../Authentication/LoginModal";
 import LazyImage from "../../assets/js/LazyImage";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function HeaderMenu() {
   const [expanded, setExpanded] = useState(false);
