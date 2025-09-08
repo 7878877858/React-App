@@ -27,6 +27,9 @@ $(document).ready(function () {
         var viewportBottom = viewportTop + $(window).height();
         return elementBottom > viewportTop && elementTop < viewportBottom;
     };
+
+
+    
 });
 
 // -------------------- Services Icons Boxes Start --------------------

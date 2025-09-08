@@ -1,6 +1,7 @@
 
 import mobile_dashboard from "../../assets/image/mobile/mobile_dashboard.png";
 import { useEffect } from "react";
+import LazyImage from "../../assets/js/LazyImage";
 const item = [
     'Registration fees for membership of TradGo is non refundable.',
     'TradGo has reserve right for change/modify policy of for any retailer/distributor in future for services which is on paid basis.',
@@ -49,7 +50,7 @@ export default function FAQ() {
                                                 <h4>Go eBill - Download the IOS Super App</h4>
                                                 <div>Download the app now &amp; make convenience a part of your life.</div>
                                             </div>
-                                            <div className="col-2 mb-2"><img src={mobile_dashboard}
+                                            <div className="col-2 mb-2"><LazyImage src={mobile_dashboard}
                                                 alt="SWORLD" style={{ width: "100%" }} />
                                             </div>
                                             <div className="col-5">

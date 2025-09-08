@@ -2,6 +2,7 @@ import qrCode from "../../assets/image/qr_code.svg";
 import playStore from "../../assets/image/play_store.png";
 import appStore from "../../assets/image/app_store.png";
 import HeaderMenu from "./HeaderMenu";
+import LazyImage from "../../assets/js/LazyImage";
 
 function Header() {
     return (
@@ -10,28 +11,16 @@ function Header() {
             <section>
                 <div className="d-none d-md-block qr_code animZoomIn">
                     <div className="model">
-                        <img src={qrCode} alt="qr_code" className="qr_code_img" />
+                        <LazyImage src={qrCode} alt="qr_code" className="qr_code_img mx-auto" />
                         <div className="model_content">
                             <p className="mb-0">Download App</p>
 
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    src={playStore}
-                                    alt="play_store"
-                                    style={{ marginRight: 10, marginLeft: 10 }}
-                                />
+                            <a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN" target="_blank" rel="noopener noreferrer">
+                                <LazyImage src={playStore} alt="play_store" className="ms-2" />
                             </a>
 
-                            <a
-                                href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <img src={appStore} alt="app_store" />
+                            <a href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235" target="_blank"  rel="noopener noreferrer">
+                                <LazyImage src={appStore} alt="app_store" className="ms-2" />
                             </a>
                         </div>
                     </div>

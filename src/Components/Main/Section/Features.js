@@ -1,75 +1,112 @@
+import React from "react";
+import LazyImage from "../../../assets/js/LazyImage";
+import "../../../assets/css/main.css"
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Mjio from "../../../assets/image/Main_style/assets/image/operators/mobile/Jio.svg";
+import MMain from "../../../assets/image/Main_style/assets/image/mobile/01.png";
+import Mairtel from "../../../assets/image/Main_style/assets/image/operators/mobile/Airtel.svg";
+import Mbsnl from "../../../assets/image/Main_style/assets/image/operators/mobile/Bsnl.svg";
+import Mvodafon from "../../../assets/image/Main_style/assets/image/operators/mobile/vodafone.svg";
 
-import appDashboard from '../../../assets/image/mobile/app_dashboard.png';
-import mobileDashboard from '../../../assets/image/mobile/our_all_services.png';
-import newDashboard from '../../../assets/image/mobile/new_dashboard_4.png';
+import Dairtel from "../../../assets/image/Main_style/assets/image/operators/dth/Airtel.svg";
+import Dd2h from "../../../assets/image/Main_style/assets/image/operators/dth/D2h_logo_Brand.svg";
+import Ddish from "../../../assets/image/Main_style/assets/image/operators/dth/Group_10120.svg";
+import Dsun from "../../../assets/image/Main_style/assets/image/operators/dth/image.svg";
+import Dtatsky from "../../../assets/image/Main_style/assets/image/operators/dth/image-1.svg";
+import DMain from "../../../assets/image/Main_style/assets/image/mobile/02.png";
+
+import EMain from "../../../assets/image/Main_style/assets/image/mobile/03.png";
+import Etorrent from "../../../assets/image/Main_style/assets/image/operators/electricity_bill/torrent.svg";
+import Eadani from "../../../assets/image/Main_style/assets/image/operators/electricity_bill/adani.svg";
+import Ebest from "../../../assets/image/Main_style/assets/image/operators/electricity_bill/best.svg";
+import Emaha from "../../../assets/image/Main_style/assets/image/operators/electricity_bill/mahavitaran.svg";
+
 const features = [
   {
-    title: 'Mobile Recharge',
-    li: [
-      'TradGo simplifies online mobile recharge and bill payments across India, offering seamless services for all major telecom operators, including Airtel, Vodafone, Jio, and BSNL.',
-      'With cutting-edge encryption technology, TradGo ensures secure transactions through multiple payment options like credit/debit cards, net banking, e-wallets, and UPI.',
-      'Experience lightning-fast recharges with an intuitive, user-friendly interface that lets you top up your mobile or pay bills anytime, anywhere. Choose TradGo for reliability, convenience, and peace of mind!'
+    title: "Mobile Recharge",
+    p: [
+      "TradGo simplifies online mobile recharge and bill payments across India, offering seamless services for all major telecom operators, including Airtel, Vodafone, Jio, and BSNL.",
+      "With cutting-edge encryption technology, TradGo ensures secure transactions through multiple payment options like credit/debit cards, net banking, e-wallets, and UPI.",
     ],
-    src: appDashboard,
-    alt: 'app_dashboard'
+    btnTitle: "Recharge Now",
+    operatorsImg: [Mjio, Mairtel, Mbsnl, Mvodafon],
+    src: MMain,
+    alt: "mobile",
   },
   {
-    title: 'DTH Recharge',
-    li: [
-      'TradGo is a rapidly growing platform designed to simplify your DTH (Direct to Home) recharge experience',
-      'Enjoy fast, hassle-free recharges for all major operators, including Airtel DTH, Tata Sky, Videocon D2H, Dish TV, and more—all in one place!',
-      'With 24/7 support via live chat and call, TradGo ensures uninterrupted entertainment by addressing your queries and issues promptly. Recharge smarter with TradGo today!'
+    title: "DTH Recharge",
+    p: [
+      "TradGo is a rapidly growing platform designed to simplify your DTH (Direct to Home) recharge experience",
+      "Enjoy fast, hassle-free recharges for all major operators, including Airtel DTH, Tata Sky, Videocon D2H, Dish TV, and more—all in one place!",
     ],
-    src: mobileDashboard,
-    alt: 'app_dashboard'
+    btnTitle: "Recharge Now",
+    operatorsImg: [Dairtel, Dd2h, Ddish, Dsun, Dtatsky],
+    src: DMain,
+    alt: "dth",
   },
   {
-    title: 'Electricity Bill Payment',
-    li: [
-      'With TradGo, paying your electricity bills is quick, secure, and hassle-free. We support a wide range of providers, including SBPDCL, BSES Rajdhani, TATA Power, BEST Mumbai, Adani Electricity, and many others.',
-      'Enjoy instant payment processing to avoid late fees and ensure uninterrupted power supply. Simply select the electricity bill option, enter your consumer number, fetch your bill details, and complete your payment in just a few clicks!',
-      'Switch to TradGo for a seamless bill payment experience today.'
+    title: "Electricity Bill Payment",
+    p: [
+      "With TradGo, paying your electricity bills is quick, secure, and hassle-free. We support a wide range of providers, including SBPDCL, BSES Rajdhani, TATA Power, BEST Mumbai, Adani Electricity, and many others.",
+      "Pay your electricity bill instantly – avoid late fees and enjoy uninterrupted power. Just select the bill option, enter your consumer number, view details, and pay in seconds!",
     ],
-    src: newDashboard,
-    alt: 'app_dashboard'
-  }
-];
+    btnTitle: "Bill Pay Now",
+    operatorsImg: [Etorrent, Eadani, Ebest, Emaha],
+    src: EMain,
+    alt: "electricity",
+  },
 
+
+];
 function Features() {
   return (
     <section className="features">
-      <div className="container py-5">
-        {features.map((feature, index) => (
-          <div
-            className="row align-items-center position-sticky bg-white"
-            style={{ height: 'calc(100vh - 68px)', top: '68px' }}
-            key={index} 
-          >
-            <div className="col-12 col-md-8">
-              <div className="d-flex flex-column w-100 h-100">
-                <h1 className="mb-3 fw-bold text-secondary text-start">
-                  {feature.title}
-                </h1>
-                <ul className="d-flex flex-column gap-3">
-                  {feature.li.map((item, i) => (
-                    <li className="fs-5" key={i}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+      <div className="container">
+        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="110000000" >
+          <div className="carousel-inner">
+            {features.map((item, index) => (
+              <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index} >
+                <div className="article-bg row align-items-center p-4">
+                  <div className="col my-auto">
+                    <h1 className="fs-1">{item.title}</h1>
+
+                    {item.p?.map((p, i) => (
+                      <p className="fs-6" key={i}>  {p}  </p>
+                    ))}
+
+                    <button className="btn btn-primary fs-3">
+                      {item.btnTitle}{" "}
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+
+                    <div className="d-flex mt-3 gap-3">
+                      {item.operatorsImg?.map((op, i) => (
+                        <LazyImage key={i} src={op} alt="operator" className="rounded-circle operator-img" />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="d-none d-md-block col-auto col-lg my-auto">
+                    <div className="hero-image" data-aos="zoom-in" data-aos-delay="300"
+                    >
+                      <div className="image-wrapper">
+                        <LazyImage src={item.src} alt={item.alt} className="operator-img-mobile img-fluid float-end pe-0 pe-lg-3" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-md-4 d-none d-md-block">
-              <div className="d-flex align-items-center justify-content-end w-100 h-100">
-                <img
-                  src={feature.src}
-                  alt={feature.alt}
-                  className="mobile_img"
-                />
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
+          <button className="carousel-control-prev justify-content-start" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" >
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next justify-content-end" type="button" data-bs-target="#myCarousel" data-bs-slide="next" >
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </section>
   );

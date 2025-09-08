@@ -5,20 +5,22 @@ import '../../assets/css/snow_fall.css';
 import Hero from "../../Components/Main/Section/Hero";
 import RechargeBillPayments from "../../Components/Main/Section/RechargeBillPayments";
 import Features from "./Section/Features";
-import Connecting from "./Section/Connecting";
 import Travel from "./Section/Travel";
-import Airplane from "./Section/Airplane";
-import BookTickets from "./Section/BookTickets";
 import GoldMembership from './Section/GoldMembership';
 import ReferEarn from './Section/ReferEarn';
 import Testimonials from './Section/Testimonials';
-import { useEffect } from "react";
 import Giftcard from './Section/GiftCard';
 import Shopping from './Section/Shopping';
 import { Helmet } from "react-helmet";
+import React, { useEffect, useState } from "react";
+import { getDeviceId } from "../../utils/getDeviceId"; // Assuming you have a utility function to get device ID
 function Main() {
+    const [deviceId, setDeviceId] = useState("");
     useEffect(() => {
         document.title = "Dashboard | TradGo Recharge & Bill Payment";
+    }, []);
+    useEffect(() => {
+        setDeviceId(getDeviceId());
     }, []);
     return (
         <>
@@ -38,18 +40,20 @@ function Main() {
                 <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
                 <link rel="canonical" href="https://tradgo.in" />
             </Helmet>
+            <div style={{ height: 80 }}></div>
             <Hero />
             <RechargeBillPayments />
             <Features />
-            <Connecting />
+            {/* <Connecting /> */}
             <Giftcard />
             <Shopping />
             <Travel />
-            <Airplane />
-            <BookTickets />
+            {/* <Airplane /> */}
+            {/* <BookTickets /> */}
             <GoldMembership />
             <ReferEarn />
             <Testimonials />
+
         </>
     );
 }

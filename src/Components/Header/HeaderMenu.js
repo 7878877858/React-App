@@ -1,112 +1,129 @@
-// import tradgo_sp from "../../assets/image/vector/tradgo_sp.svg";
-// import '../../assets/css/bootstrap.min.css';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-// import '../../assets/css/main.css';
-// import { Link } from "react-router-dom";
-// import StoreLink from "../StoreLink/StoreLink";
-
-// function HeaderMenu() {
-//     return (
-//         <>
-//             <header>
-//                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-//                     <div className="container">
-//                         <Link className="navbar-brand" to="/">
-//                             <img src={tradgo_sp} alt="tradgo" style={{ width: "150px" }} /></Link>
-//                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-//                             <span className="navbar-toggler-icon"></span>
-//                         </button>
-//                         <div className="collapse navbar-collapse" id="navbarNav">
-//                             <ul className="navbar-nav ms-auto">
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/">Home</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/ContactUs">Contact Us</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/AboutUs">About Us</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link text-secondary fs-6 fw-semibold ms-2" to="/FAQ">FAQs</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                 <StoreLink/>
-//                                 </li>
-
-//                             </ul>
-//                         </div>
-//                     </div>
-//                 </nav>
-//             </header>
-//         </>
-//     );
-// }
-// export default HeaderMenu;
 import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import tradgo_sp from "../../assets/image/vector/tradgo_sp.svg";
-import StoreLink from "../StoreLink/StoreLink";
 import { Link } from "react-router-dom";
+import "../../assets/css/main.css";
+import LoginModal from "../Authentication/LoginModal";
+import LazyImage from "../../assets/js/LazyImage";
 
 function HeaderMenu() {
-    const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
-    return (
-        <Navbar
-            expand="lg"
-            bg="light"
-            variant="light"
-            fixed="top"
-            className="shadow"
-            expanded={expanded}
-            onToggle={(isExpanded) => setExpanded(isExpanded)}
+  return (
+    <>
+      <header className="sticky">
+        {/* Top strip */}
+        <div
+          className="px-3 py-2 w-full text-center fw-semibold fs-5 text-center text-white"
+          style={{ backgroundColor: "#1b1464" }}
         >
-            <Container>
-                <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
-                    <img src={tradgo_sp} alt="tradgo" style={{ width: "150px" }} />
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarNav" />
-                <Navbar.Collapse id="navbarNav">
-                    <Nav className="ms-auto">
-                        <Nav.Link
-                            as={Link}
-                            to="/"
-                            className="text-secondary fs-6 fw-semibold ms-2"
-                            onClick={() => setExpanded(false)}
-                        >
-                            Home
-                        </Nav.Link>
-                        <Nav.Link
-                            as={Link}
-                            to="/contact"
-                            className="text-secondary fs-6 fw-semibold ms-2"
-                            onClick={() => setExpanded(false)}
-                        >
-                            Contact Us
-                        </Nav.Link>
-                        <Nav.Link
-                            as={Link}
-                            to="/about_us"
-                            className="text-secondary fs-6 fw-semibold ms-2"
-                            onClick={() => setExpanded(false)}
-                        >
-                            About Us
-                        </Nav.Link>
-                        <Nav.Link
-                            as={Link}
-                            to="/faqs"
-                            className="text-secondary fs-6 fw-semibold ms-2"
-                            onClick={() => setExpanded(false)}
-                        >
-                            FAQs
-                        </Nav.Link>
-                        <StoreLink />
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
+          Apki Digital Duniya
+        </div>
+
+        {/* Navbar */}
+        <Navbar
+          expand="lg"
+          bg="white"
+          variant="light"
+          fixed="top"
+          className="shadow-sm"
+          expanded={expanded}
+          onToggle={(isExpanded) => setExpanded(isExpanded)}
+          style={{ top: "45px" }} // push below top strip
+        >
+          <Container>
+            {/* Logo */}
+            <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
+              <LazyImage src={tradgo_sp} alt="tradgo" style={{ width: "120px" }} />
+            </Navbar.Brand>
+
+            {/* Toggle */}
+            <Navbar.Toggle aria-controls="navbarNav" />
+            <Navbar.Collapse id="navbarNav">
+              {/* Center Nav links */}
+              <Nav className="mx-auto">
+                <Nav.Link
+                  as={Link}
+                  to="/services"
+                  className="text-secondary fs-6 fw-semibold text-nowrap"
+                  onClick={() => setExpanded(false)}
+                >
+                  SERVICES
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/brand-gift-card"
+                  className="text-secondary fs-6 fw-semibold text-nowrap"
+                  onClick={() => setExpanded(false)}
+                >
+                  BRAND GIFT CARD
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/shopping"
+                  className="text-secondary fs-6 fw-semibold text-nowrap"
+                  onClick={() => setExpanded(false)}
+                >
+                  SHOPPING
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/travel"
+                  className="text-secondary fs-6 fw-semibold text-nowrap"
+                  onClick={() => setExpanded(false)}
+                >
+                  TRAVEL
+                </Nav.Link>
+              </Nav>
+
+              {/* Right side */}
+              <ul className="navbar-nav">
+                {/* Search dropdown */}
+                <li>
+                  <div className="btn-group">
+                    <button
+                      type="button"
+                      className="btn dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i className="fa fa-search"></i>
+                    </button>
+                    <ul className="dropdown-menu dropdown-menu-end py-0">
+                      <li>
+                        <div className="input-group">
+                          <input
+                            type="text"
+                            className="form-control border-0 px-3 py-2"
+                            style={{ backgroundColor: "#F5F5F5" }}
+                            placeholder="Search"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* Login button */}
+                <li className="nav-item">
+                  <button
+                    className="btn nav-link text-secondary text-nowrap fs-6 fw-semibold ms-2"
+                    onClick={() => setShowLogin(true)}
+                  >
+                    Sign up | Login
+                  </button>
+                </li>
+              </ul>
+            </Navbar.Collapse>
+          </Container>
         </Navbar>
-    );
+      </header>
+
+      {/* Login Modal */}
+      <LoginModal show={showLogin} handleClose={() => setShowLogin(false)} />
+    </>
+  );
 }
 
 export default HeaderMenu;

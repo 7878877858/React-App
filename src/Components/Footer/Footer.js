@@ -3,6 +3,7 @@ import app_store from "../../assets/image/vector/app_store.svg";
 import tradgo_wp from "../../assets/image/vector/tradgo_wp.svg";
 
 import { Link } from "react-router-dom";
+import LazyImage from "../../assets/js/LazyImage";
 function Footer() {
     return (
         <>
@@ -11,7 +12,7 @@ function Footer() {
                     <div className="row">
                         <div className="col-md-4">
                             <h4 className="d-flex justify-content-center justify-content-md-start">
-                                <img src={tradgo_wp} alt="tradgo" style={{ width: "150px" }} />
+                                <LazyImage src={tradgo_wp} alt="tradgo" style={{ width: "150px" }} />
                             </h4>
                             <p className="text-center text-md-start">tradgo is an online platform that provides a quick and
                                 convenient solution for mobile recharge.</p>
@@ -44,12 +45,12 @@ function Footer() {
                                     <h4>Install App</h4>
                                     <a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"
                                         target="_blank" rel="noreferrer">
-                                        <img src={play_store} alt="app_store" className="app_store_img pb-2" />
+                                        <LazyImage src={play_store} alt="app_store" className="app_store_LazyImage pb-2" />
                                     </a>
 
                                     <a href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235"
                                         target="_blank" rel="noreferrer">
-                                        <img src={app_store} alt="play_store" className="play_store_img" />
+                                        <LazyImage src={app_store} alt="play_store" className="play_store_LazyImage" />
                                     </a>
                                 </div>
                                 <div className="d-flex flex-column">

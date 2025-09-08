@@ -13,6 +13,7 @@ import reliance_general_insurance_health_insurance_plans from "../../../assets/i
 import "../../../assets/css/bootstrap.min.css";
 import "../../../assets/css/main.css";
 import "../../../assets/css/snow_fall.css";
+import LazyImage from "../../../assets/js/LazyImage";
 
 const operators = [
   { icon: aadhar_housing_finance_ltd, name: "aadhar_housing_finance_ltd" },
@@ -49,7 +50,7 @@ export default function Connecting() {
           <div className="container">
             <div className="carousel d-flex">
               {scrollingOperators.map((op, index) => (
-                <img key={index} src={op.icon} alt={op.name} />
+                <LazyImage key={index} src={op.icon} alt={op.name} />
               ))}
             </div>
           </div>

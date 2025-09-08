@@ -1,16 +1,9 @@
 import kd from "../../../assets/image/users/kd.svg";
-import md from  "../../../assets/image/users/md.svg";
 import pk from "../../../assets/image/users/pk.svg";
 import rg from "../../../assets/image/users/rg.svg";
-import kp from "../../../assets/image/users/kp.svg";
-import ng from "../../../assets/image/users/ng.svg";
+import LazyImage from "../../../assets/js/LazyImage";
 const aboutUs = [
-  {
-    icon: md,
-    name: "Mital Dabhi",
-    star: 4.5,
-    msg: "Instant mobile recharges to hassle-free bill payments, it’s the ultimate all-in-one app. The cashback offers are unbeatable, and the interface is sleek and easy to use. Transactions are lightning-fast and secure, giving me total peace of mind. Highly recommended for anyone who values convenience and savings!",
-  },
+  
   {
     icon: pk,
     name: "Parmar Kinjal",
@@ -29,18 +22,7 @@ const aboutUs = [
     star: 5,
     msg: "Tradgo Bus Booking is fantastic! User-friendly interface, easy booking process, and reliable service. Great for hassle-free travel planning. Highly recommended!",
   },
-  {
-    icon: kp,
-    name: "Keval Punani",
-    star: 5,
-    msg: "Tradgo has exceeded my expectations in every way. The app is incredibly user-friendly, and the customer support is top-notch. I have never had any issues with transactions, and the cashback offers are amazing. I highly recommend Tradgo to anyone looking for a reliable and efficient payment solution.",
-  },
-  {
-    icon: ng,
-    name: "Nikunj Gohel",
-    star: 4.5,
-    msg: "Tradgo has been a fantastic experience for me. The user interface is intuitive, transactions are quick, and the cashback rewards are a nice touch. The customer service team is always responsive and helpful. I have already shared my positive experience with Tradgo with my friends and family.",
-  },
+ 
 ];
 
 export default function Testimonials() {
@@ -56,7 +38,7 @@ export default function Testimonials() {
             <div className="col" key={index}>
               <div className="comment_card shadow h-100 p-3">
                 <div className="d-flex align-items-center justify-content-start gap-3 mb-2">
-                  <img
+                  <LazyImage
                     src={about.icon}
                     alt={about.name}
                     className="comment_user_img"

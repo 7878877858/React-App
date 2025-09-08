@@ -85,9 +85,8 @@
 // }
 
 // export default RechargeBillPayments;
-import '../../../assets/css/bootstrap.min.css';
-import '../../../assets/css/main.css';
-import '../../../assets/css/snow_fall.css';
+import "../../../assets/css/main.css"
+
 import mobile from '../../../assets/image/icons/mobile.svg';
 import dth from '../../../assets/image/icons/dth.svg';
 import electricity from '../../../assets/image/icons/electricity.svg';
@@ -100,7 +99,7 @@ import loan from '../../../assets/image/icons/loan_repayment.svg';
 import landline from '../../../assets/image/icons/landline.svg';
 import broadband from '../../../assets/image/icons/broadband.svg';
 import more from '../../../assets/image/icons/more.svg';
-
+import LazyImage from '../../../assets/js/LazyImage'
 const services = [
     { icon: mobile, name: 'Mobile Recharge' },
     { icon: dth, name: 'DTH' },
@@ -137,7 +136,7 @@ function RechargeBillPayments() {
             <p className="text-center text-muted mb-5">
                 Recharge and pay bills in seconds - fast, smooth, and rewarding!
             </p>
-            <div className="services-container">
+            <div className="services_container">
                 <div className="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4 text-center">
                     {services.map((service, index) => (
                         <div className="col" key={index}>
@@ -146,13 +145,13 @@ function RechargeBillPayments() {
                                 onClick={handleServiceClick}
                                 style={{ cursor: "pointer" }}
                             >
-                                <img
+                                <LazyImage
                                     src={service.icon}
                                     alt={service.name}
                                     className="mb-2"
                                     style={{ width: '64px', height: '64px' }}
                                 />
-                                <p className="service-name">
+                                <p className="text-secondary fs-6 fw-semibold m-0">
                                     {service.name.split(' ').map((word, i, arr) => (
                                         <span key={i}>
                                             {word}

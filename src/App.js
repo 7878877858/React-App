@@ -10,6 +10,7 @@ import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "./Components/TermsAndConditions/TermsAndConditions";
 import Refundpolicy from "./Components/RefundPolicy/RefundPolicy";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+// import Login from "./Components/Authentication/Login";
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Refundpolicy" element={<Refundpolicy />} />
+        {/* <Route path="/login" element={<Login />} /> */}
       </Routes>
 
       <Footer />

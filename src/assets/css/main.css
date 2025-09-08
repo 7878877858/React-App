@@ -14,7 +14,10 @@
     --light-gray: #f6f7f8;
     /* --light-blue: #000000; */
     --gold-color: #dbaf3e;
+    --gold-border: #000;
     --navbar-height: 68px;
+    --dark-blue: #000530;
+
 }
 
 body {
@@ -33,6 +36,35 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.text-ellipsis-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bg-primary {
+    background: linear-gradient(#20a7db, #0184b7);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+img.loaded {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* -------------------- QR Code Start -------------------- */
@@ -96,55 +128,72 @@ section {
     height: 12px !important;
 }
 
-.animZoomIn {}
-
 /* -------------------- QR Code End -------------------- */
 
-/* -------------------- Hero Section Start -------------------- */
-.hero {
-    min-height: calc(100vh);
-    background: url('./../image/hero_bg.png') center center no-repeat fixed;
-    background-size: cover;
-    padding: var(--navbar-height) 0px 0px 0px;
+/* -------------------- navbar Start -------------------- */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
-.hero .model_img {
-    max-height: 80vh;
-    margin-left: 12vw;
+.navbar-brand {
+    width: inherit;
+    max-width: 202px;
 }
 
-.hero .title {
-    font-size: 5rem;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .hero .title {
-        font-size: 3rem;
+@media (max-width: 991px) {
+    .navbar-brand {
+        width: min-content;
     }
 }
 
-/* -------------------- Hero Section End -------------------- */
+/* -------------------- navbar End -------------------- */
+
+/* -------------------- hero Section Start -------------------- */
+.hero {
+    /* min-height: calc(100vh - 113px); */
+    /* margin-top: 114px; */
+}
+
+.hero .bg-hero {
+    /* min-height: calc(100vh - 114px); */
+    padding-top: 100px;
+    width: 100vw;
+    background: url('./../image/hero_bg.png') center center no-repeat fixed;
+    background-size: cover;
+}
+
+.hero .model_img {
+    max-height: 50vh;
+    min-width: 270px;
+    width: -webkit-fill-available;
+    /* margin-left: 12vw; */
+}
+
+@media (max-width: 991px) {
+
+    .hero {
+        min-height: auto;
+    }
+    .hero .bg-hero {
+        padding: 114px 16px 0 16px;
+        height: -webkit-fill-available;
+        max-width: 100%;
+    }
+
+    .hero .model_img {
+        margin-left: 0vw;
+    }
+}
+/* -------------------- hero Section End -------------------- */
+
+/* -------------------- hero Section End -------------------- */
 
 /* -------------------- Recharge & Utility Bill Payment Section Start -------------------- */
-
-.title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-}
-
-.highlight {
-    color: var(--primary-color);
-}
-
-.subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-}
-
-.services-container {
+.services_container {
     background: var(--light-blue);
     border-radius: 24px;
     padding: 0px 12px 24px 12px;
@@ -163,528 +212,267 @@ section {
     cursor: pointer;
 }
 
+.service-card img {
+    margin: 0px auto;
+}
+
 .service-card:hover {
     transform: translateY(-0.25rem);
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .075);
 }
 
-.service-name {
-    margin: 0;
-    color: var(--secondary-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .title {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
 
     .service-card {
         padding: 16px 8px;
     }
+}
 
-    .service-name {
-        font-size: 0.8rem;
+@media (max-width: 575px) {
+
+    #services_container {
+        border-radius: 0px;
     }
 }
+
+
 
 /* -------------------- Recharge & Utility Bill Payment Section End -------------------- */
 
-/* -------------------- Features Section Start -------------------- */
+/* -------------------- Article Start -------------------- */
 
-.features .mobile_img {
-    max-width: 100%;
-    max-height: 60vh;
-    /* margin-left: 8vw; */
+
+.article-main {
+    overflow-x: hidden;
+    display: flex;
+    gap: 64px;
+    position: sticky;
+    top: 0;
 }
 
-.animate-normal-l {
-    animation: animateInL 1500ms cubic-bezier(0.5, 0, 0, 1) forwards
+.article-section {
+    min-width: 100%;
+    min-height: calc(100vh - 178px);
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
-@keyframes animateInL {
-    0% {
-        opacity: 0;
-        transform: translateX(1000px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-/* -------------------- Features Section End -------------------- */
-
-/* -------------------- Connecting Operators Start -------------------- */
-
-#operators_container_scroll {
-    overflow: hidden;
-    background: var(--light-blue);
+.article-bg {
+    background: #1b1464;
+    color: #ffffff;
     border-radius: 24px;
-    padding: 32px 16px;
+    width: auto;
+    margin: 0 !important;
 }
 
-#operators_container_scroll .container {
-    min-height: 100px;
+.operator-img {
+    width: 52px;
+    height: 52px;
+}
+
+.operator-img-mobile {
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+
+    .article-section {
+        min-height: calc(100vh - 146px);
+    }
+
+    .article-bg {
+        margin: 130px 0;
+        min-height: calc(100vh - 146px);
+    }
+
+    .operator-img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+/* -------------------- Article / Features End -------------------- */
+
+/* -------------------- Gift Card Section Start -------------------- */
+
+.giftcard_section {
+    height: auto;
+}
+
+/* Container for the entire carousel */
+.giftcard_section .multi-carousel-container {
+    cursor: grab;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
     position: relative;
-    overflow: hidden;
-    border-radius: 12px;
 }
 
-#operators_container_scroll .carousel {
+/* Cursor styles for dragging */
+.giftcard_section .multi-carousel-container.dragging,
+#multiCarousel.dragging {
+    cursor: grabbing;
+}
+
+/* Wrapper for all slides */
+.giftcard_section .multi-carousel-inner {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Individual slide */
+.giftcard_section .multi-carousel-item,
+.giftcard_section .clone {
+    box-sizing: border-box;
+    flex: 0 0 33.33%;
+    padding: 0 5px;
+    position: relative;
+}
+
+/* Control buttons */
+.giftcard_section .multi-carousel-control-prev,
+.giftcard_section .multi-carousel-control-next {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: center;
     position: absolute;
+    text-decoration: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    width: 40px;
+    z-index: 1;
+}
+
+.giftcard_section .multi-carousel-control-prev:hover,
+.giftcard_section .multi-carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.giftcard_section .multi-carousel-control-prev {
+    left: 20px;
+}
+
+.giftcard_section .multi-carousel-control-next {
+    right: 20px;
+}
+
+/* Image container with dynamic height */
+.giftcard_section .img-container {
+    border-radius: 1.5rem;
+    /* height: var(--carousel-height, 80vh); */
     overflow: hidden;
-    white-space: nowrap;
-    top: 0px;
-    left: 0px;
-    animation: infiscroll 8s linear infinite;
+    position: relative;
 }
 
-#operators_container_scroll .carousel:hover {
-    animation-play-state: paused;
+/* Image styling */
+.giftcard_section .img-container img,
+#carouselInner img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    pointer-events: none;
+    user-drag: none;
+    aspect-ratio: 500/323;
+    width: 100%;
+    -webkit-user-drag: none;
+    transition: transform 0.3s ease;
 }
 
-#operators_container_scroll .carousel:hover {
-    animation-play-state: paused;
+.giftcard_section .img-container:hover img {
+    transform: translateZ(0) scale(1.02);
 }
 
-#operators_container_scroll .carousel img {
-    margin: 0 1rem;
-    width: 100px;
-    height: 100px;
-    /* max-height: 300px; */
-    /* height: 100%; */
-    /* object-fit: cover; */
+/* Carousel cursor styling */
+#multiCarousel {
+    cursor: grab;
+    touch-action: pan-y;
 }
 
-@keyframes infiscroll {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-50%, 0);
-    }
+/* Disable text selection during drag */
+#multiCarousel.dragging {
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-@media (max-width: 768px) {
+/* Responsive adjustments for screens smaller than 720px (45em) */
+@media (max-width: 45em) {
 
-    #operators_container_scroll {
-        padding: 16px 8px;
-    }
-
-    #operators_container_scroll .container {
-        min-height: 64px;
-    }
-
-    #operators_container_scroll .carousel img {
-        margin: 0 0.5rem;
-        width: 64px;
-        height: 64px;
+    .giftcard_section .multi-carousel-item,
+    .giftcard_section .clone {
+        flex: 0 0 50%;
     }
 }
 
-/* -------------------- Connecting Operators End -------------------- */
+@media (max-width: 425px) {
 
-/* -------------------- Gift Card Start -------------------- */
-.item-slider {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.item-list {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  transform: translateX(0);
-}
-
-.hover-scroll:hover {
-  animation: scrollRound 15s linear infinite;
-}
-
-@keyframes scrollRound {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.giftcard_container {
-  background-image: url('../../assets/image/giftcard_types/getwave_03.svg');
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  animation: moveBg 10s linear infinite;
-}
-
-@keyframes moveBg {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 917px 0; /* Adjust this value as per image width/speed */
-  }
-}
-
-.giftcard_container .giftcard_boy {
-    width: 100%; 
-    max-width: 400px; 
-    aspect-ratio: 6/7;
-}
-
-.giftcard_container .giftcard {
-    width: 100%; 
-    max-width: 150px; 
-    aspect-ratio: 5/4;
-}
-
-.giftcard_container .taxt-view-lg {
-    font-size: 120px;
-    font-weight: bold;
-    color: #DBAF3E;
-}
-
-.giftcard_container .taxt-view-md {
-    font-size: 40px; 
-    color: #2563EB;
-}
-
-.giftcard_container .taxt-view-sm {
-    font-size: 20px;
-}
-
-@media (max-width: 768px) {
-
-    .giftcard_container .giftcard_boy {
-        max-width: 175px; 
-    }
-
-    .giftcard_container .giftcard {
-        max-width: 100px;
-    }
-
-    .giftcard_container .taxt-view-lg {
-        margin-top: 16px;
-        font-size: 40px;
-    }
-
-    .giftcard_container .taxt-view-md {
-        font-size: 24px;
-    }
-
-    .giftcard_container .taxt-view-sm {
-        font-size: 16px;
+    .giftcard_section .multi-carousel-item,
+    .giftcard_section .clone {
+        flex: 0 0 100%;
     }
 }
 
-
-/* -------------------- Gift Card End -------------------- */
+/* -------------------- Gift Card Section End -------------------- */
 
 /* -------------------- Shopping Start -------------------- */
 
-.shopping_container p {
-    font-size: 20px; 
-    max-width:925px; 
-    margin: 0px auto;
-}
-
-
-@media (max-width: 768px) {
-    .shopping_container p {
-        font-size: 16px; 
-    }
+.card-img-top {
+    aspect-ratio: 1/1;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 /* -------------------- Shopping End -------------------- */
 
-/* -------------------- Item Slider Start -------------------- */
-
-.item-slider {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.item-list {
-    display: flex;
-    animation: slide 15s linear infinite;
-}
-
-.item-product-list {
-    display: flex;
-    animation: slide 20s linear infinite;
-}
-
-.item-card {
-    flex: 0 0 200px;
-    margin: 8px 12px;
-    background: #fff;
-    /*border: 1px solid #ddd;*/
-    border-radius: 8px;
-    padding: 24px;
-    text-align: center;
-    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
-    transition: transform 0.3s ease;
-}
-
-.item-card:hover {
-    transform: scale(1.1);
-}
-
-.item-card img {
-    width: 100%;
-    max-width: 150px;
-    /*object-fit: cover;*/
-    border-radius: 5px;
-    aspect-ratio: 1/1;
-}
-
-.item-card h3 {
-    font-size: 1.2em;
-    margin: 16px 0 0 0;
-    color: #333;
-}
-
-.item-card p {
-    font-size: 1em;
-    color: #666;
-    margin: 5px 0;
-}
-
-.item-card .price {
-    font-weight: bold;
-    color: #2ecc71;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.item-list:hover {
-    animation-play-state: paused;
-}
-
-.item-product-list:hover {
-    animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-
-    .item-slider {
-        width: 100%;
-        margin: 40px auto 0 auto;
-    }
-
-    .item-card {
-        flex: 0 0 100px;
-        margin: 4px 8px;
-        padding: 8px;
-    }
-
-    .item-card h3 {
-        font-size: 0.8em;
-        margin: 8px 0 0 0;
-    }
-}
-
-/* -------------------- Item Slider End -------------------- */
-
-/* -------------------- Item Corner Start -------------------- */
-
-.csshub-ribbon-wrapper {
-    width: 106px;
-    height: 108px;
-    overflow: hidden;
-    position: absolute;
-    top: -6px;
-    right: -4px;
-}
-
-.csshub-ribbon {
-  font-family: 'sans-serif';
-  line-height: 12px;
-  font-size: 13px;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  position: relative;
-  padding: 7px 0;
-  left: 27px;
-  top: 16px;
-  width: 110px;
-  background-color: #20a7db;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.5px;
-  box-shadow: -3px 5px 6px -5px rgba(0, 0, 0, 0.5);
-  outline: 1px dotted #fff;
-  outline-offset: -4px;
-/*  background-image: radial-gradient(circle farthest-side, #FF1C1A, #BF0B00);*/
-  text-shadow: 2px 1px 0px rgba(0, 0, 0, 0.2);
-}
-
-.csshub-ribbon:before, .csshub-ribbon:after {
-  content: "";
-  border-top: 4px solid #136483;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  position: absolute;
-  bottom: -4px;  }
-
-.csshub-ribbon:before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 100%;
-  z-index: -1;
-  border-left: 4px solid #136483;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-top: 4px solid #136483; }
-
-.csshub-ribbon:after {
-  content: "";
-  position: absolute;
-  right: 7px;
-  top: 100%;
-  z-index: -1;
-  border-left: 4px solid transparent;
-  border-right: 4px solid #136483;
-  border-bottom: 4px solid transparent;
-  border-top: 4px solid #136483; 
-}
-
-/* -------------------- Item Corner End -------------------- */
-
-/* -------------------- Travel Time Start -------------------- */
-
-.travel_time .travel_girl {
-    width: 100%;
-    max-width: 414px;
-    max-height: 70vh;
-    margin: 0 auto;
-    animation: up_down 2s ease-in-out infinite;
-}
-
-@keyframes up_down {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.travel_time .facility_card {
-    float: right;
-    width: fit-content;
-    background-color: var(--light-blue);
-    border-radius: 8px;
-    padding: 8px 16px;
-}
-
-/* -------------------- Travel Time End -------------------- */
-
 /* -------------------- Travel Smart Start -------------------- */
 
-#travel_smart_container {
+.travel_smart_container {
     background: var(--light-blue);
     border-radius: 24px;
-    padding: 0px 12px 24px 12px;
 }
 
-.airplane-animation {
-    width: 50vw;
-    max-width: 500px;
-    animation: flyPlane 2s ease-in-out infinite;
+.travel_smart_container .bus-card {
+    min-width: 100px;
+    margin: 0px 0px 0px 0px;
 }
 
-@keyframes flyPlane {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(16px, 0px);
-        animation-timing-function: ease-in-out;
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
+.travel_smart_container .bus-img {
+    border-radius: 0px 24px 24px 0px;
+    max-height: 450px;
 }
 
-.cloud-animation {
-    animation: cloud 6s ease-in-out infinite;
-}
+@media (max-width: 575px) {
 
-@keyframes cloud {
-    0% {
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-
-    33.33% {
-        transform: translate(4px, 8px) rotate(1deg);
-    }
-
-    66.66% {
-        transform: translate(8px, 4px) rotate(-2deg);
-    }
-
-    100% {
-        transform: translate(0px, 0px) rotate(0deg);
+    .travel_smart_container {
+        border-radius: 0px;
     }
 }
 
 /* -------------------- Travel Smart End -------------------- */
 
-/* -------------------- Fav Destinations Start -------------------- */
-
-#travel_destination_container {}
-
-.destination-card {
-    margin: 0 auto;
-    max-width: 300px;
-}
-
-#travel_destination_container img {
-    width: 100%;
-    max-width: 306px;
-    height: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-/* -------------------- Fav Destinations End -------------------- */
-
 /* -------------------- Gold Membership Start -------------------- */
+
+.border-gold {
+    background: linear-gradient(180deg, #DBAF3E 0%, #FFE8AC 100%);
+    border-radius: 24px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.bg-dark-blue {
+    background-color: var(--dark-blue);
+    border-radius: 18px;
+}
 
 .gold_coin {
     max-width: 84px;
@@ -695,20 +483,35 @@ section {
     color: var(--gold-color);
 }
 
-.subscription_platform_img {
-    width: 100%;
-    max-width: 128px;
-    max-height: 128px;
-    margin-top: 0px;
+@media (max-width: 768px) {
+
+
+
+    .bg-dark-blue {
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .border-gold {
+        border-radius: 0px;
+    }
 }
 
 /* -------------------- Gold Membership End -------------------- */
 
-/* -------------------- Refer And Earn Start -------------------- */
+.refer_and_earn_container {
+    border-radius: 24px;
+}
 
-.refer_and_earn_container{}
+@media (max-width: 575px) {
 
-/* -------------------- Refer And Earn End -------------------- */
+    .refer_and_earn_container {
+        border-radius: 0px;
+    }
+}
+
 
 /* -------------------- About Us Start -------------------- */
 
@@ -824,7 +627,6 @@ section {
 .other {
     background: var(--light-gray);
     color: rgba(33, 37, 41, 0.75);
-    ;
 }
 
 .other_section {

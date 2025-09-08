@@ -1,6 +1,7 @@
 import hawa_mahal_jaipur_rajasthan from "../../../assets/image/travel_destinations/hawa_mahal_jaipur_rajasthan.png";
 import atal_bridge_ahmedabad_gujarat from "../../../assets/image/travel_destinations/atal_bridge_ahmedabad_gujarat.png";    
 import gateway_of_india_mumbai from "../../../assets/image/travel_destinations/gateway_of_india_mumbai.png";
+import LazyImage from "../../../assets/js/LazyImage";
 
 export default function BookTickets() {
     return (
@@ -21,7 +22,7 @@ export default function BookTickets() {
                         id="travel_destination_container">
                         <div className="col">
                             <div className="destination-card">
-                                <img src={hawa_mahal_jaipur_rajasthan}
+                                <LazyImage src={hawa_mahal_jaipur_rajasthan}
                                     alt="Hawa Mahal" className="mb-2" />
                                 <p className="text-center fs-3 fw-bold mb-2">Life is short and the India is <span
                                     className="text-secondary"> wide</span></p>
@@ -31,7 +32,7 @@ export default function BookTickets() {
                         </div>
                         <div className="col">
                             <div className="destination-card">
-                                <img src={atal_bridge_ahmedabad_gujarat}
+                                <LazyImage src={atal_bridge_ahmedabad_gujarat}
                                     alt="Atal Bridge" className="mb-2" />
                                 <p className="text-center fs-3 fw-bold mb-2">Discover the magic of Incredible <span
                                     className="text-secondary"> India</span></p>
@@ -41,7 +42,7 @@ export default function BookTickets() {
                         </div>
                         <div className="col">
                             <div className="destination-card">
-                                <img src={gateway_of_india_mumbai}
+                                <LazyImage src={gateway_of_india_mumbai}
                                     alt="Gateway Of India" className="mb-2" />
                                 <p className="text-center fs-3 fw-bold mb-2">People don’t take trips, trips take <span
                                     className="text-secondary"> people</span></p>
