@@ -1,10 +1,11 @@
 
 const Endpoints = {
     GET_LOGIN_CHECK_USER: "Registration_api/LoginCheckUser2",
-    GET_LOGIN_PASSWORD :"LoginPassword",
+    GET_LOGIN_PASSWORD: "LoginPassword",
     GET_REGISTRATION_OTP: "Registration_api/Validate_sendotp",
     GET_NEW_REGISTRATION_OTP: "Registration_api/Registration2",
     GET_VERIFY_REGISTRATION_OTP: "Registration_api/Registration_new",
+    GET_LOGIN_OTP: 'LoginOtp',
     /// not working
     GET_API_LOG: "Getapilog",
     BANNER: "Getbannerlist",

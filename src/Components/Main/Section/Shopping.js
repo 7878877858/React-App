@@ -56,26 +56,12 @@ export default function Shopping() {
                     <div className="row" id="shopping_product_container">
                         {products.map((item, index) => (
                             <div key={index} className="col-12 col-md-6 col-lg-3 p-0 d-flex align-items-stretch">
-                                <div
-                                    className="card text-start rounded-0 border border-0"
-                                    style={{ backgroundColor: item.color, width: "100%" }}
-                                >
-                                    <LazyImage
-                                        src={item.icon}
-                                        className="card-img-top"
-                                        alt={item.name}
-                                        loading="lazy"
-                                    />
+                                <div className="card text-start rounded-0 border border-0" style={{ backgroundColor: item.color, width: "100%" }} >
+                                    <LazyImage src={item.icon} className="card-img-top" alt={item.name} loading="lazy" />
                                     <div className="card-body d-flex flex-column">
                                         <h5 className="card-title fs-3">{item.name}</h5>
                                         <p className="card-text fs-6 mb-2 text-ellipsis-3">{item.text}</p>
-                                        <a
-                                            href="#"
-                                            className="btn border border-dark mt-auto align-self-start"
-                                            onClick={handleServiceClick}
-                                        >
-                                            Shop Now
-                                        </a>
+                                        <a href="/" className="btn border border-dark mt-auto align-self-start" onClick={handleServiceClick} > Shop Now </a>
                                     </div>
                                 </div>
                             </div>

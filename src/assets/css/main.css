@@ -373,7 +373,39 @@ img.loaded {
     overflow: hidden;
     position: relative;
 }
+/* Profile dropdown */
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+  margin-bottom: 10; /* adjust if needed */
+}
 
+.user_favicon{
+    max-width: 42px;
+    max-height: 42px;
+    border-radius: 50%; /* makes it a circle like rounded-circle */
+    margin-right: 0.5rem;
+}
+
+.user_name {
+    max-width: 100px;
+    display: inline-block;
+    text-align: start;
+    vertical-align: middle;
+    margin: 0;
+    white-space: normal;
+    min-width: 0;
+}
+
+.text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.bg-primary-light{
+    background-color: #EFF6FF;
+}
 /* Image styling */
 .giftcard_section .img-container img,
 #carouselInner img {

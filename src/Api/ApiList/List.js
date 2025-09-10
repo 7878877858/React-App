@@ -3,3 +3,4 @@ import Endpoints from "./endpoints";
 
 export const loginUser = (data) => postRequest(Endpoints.GET_LOGIN_CHECK_USER, data);
 export const getLoginPassword = (data) => postRequest2(Endpoints.GET_LOGIN_PASSWORD, data);
+export const getLoginOtp = (data)=> postRequest2(Endpoints.GET_LOGIN_OTP,data);
