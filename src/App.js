@@ -15,6 +15,7 @@ import LoginCheck from "./Components/Authentication/LoginCheck";
 import LoginOtp from "./Components/Authentication/LoginOtp";
 import { AuthProvider } from "./Api/Authentication/AuthContext";
 import Register from "./Components/Authentication/Register";
+import Shopping from "./Components/Shopping/Shopping";
 function App() {
   return (
     <Router>
@@ -25,14 +26,20 @@ function App() {
 }
 function MainLayout() {
   const location = useLocation();
- const hideLayoutRoutes = ["/login", "/register", "/otp", "/logincheck"];
-  const hideLayout = hideLayoutRoutes.includes(location.pathname);
+ const hideLayoutRoutes = [
+    "/login",
+    "/register",
+    "/otp",
+    "/logincheck",
+    "/shopping" 
+  ];
+  const hideLayout = hideLayoutRoutes.some(route =>
+    location.pathname.startsWith(route)
+  );
 
   return (
     <>
       <AuthProvider>
-
-
         {!hideLayout && <Header />}
         <Routes>
           <Route path="/" element={<Main />} />
@@ -46,7 +53,7 @@ function MainLayout() {
           <Route path="/logincheck" element={<LoginCheck />} />
           <Route path="/otp" element={<LoginOtp />} />
           <Route path="/register" element={<Register />} />
-
+          <Route path="/shopping" element={<Shopping/>}/>
         </Routes>
         {!hideLayout && <Footer />}
       </AuthProvider>

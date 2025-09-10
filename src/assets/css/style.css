@@ -4,6 +4,74 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .h-100vh {
     height: 100vh;
+}
+
+.web-logo {
+    max-width: 140px;
+    aspect-ratio: 300 / 83;
+}
+
+.user_favicon {
+    max-width: 42px;
+    max-height: 42px;
+}
+
+.user_name {
+    max-width: 100px;
+    display: inline-block;
+    text-align: start;
+    vertical-align: middle;
+    margin: 0;
+    white-space: normal;
+    min-width: 0;
+}
+
+
+
+.text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.text-ellipsis-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.bg-primary-light {
+    background-color: #EFF6FF;
+}
+
+.mb-revert {
+    margin-bottom: revert;
+}
+
+
+
+
+.footer{
+    background: #211C24;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    text-decoration: none;
 }

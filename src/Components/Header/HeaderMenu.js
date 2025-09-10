@@ -22,23 +22,23 @@ function HeaderMenu() {
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarNav" />
-            <Navbar.Collapse id="navbarNav">
+            <Navbar.Collapse className=" collapse navbar-collapse w-full" id="navbarNav">
               <Nav className="mx-auto">
                 <Nav.Link as={Link} to="/services" className="text-secondary fs-6 fw-semibold text-nowrap" onClick={() => setExpanded(false)}  > SERVICES </Nav.Link>
                 <Nav.Link as={Link} to="/brand-gift-card" className="text-secondary fs-6 fw-semibold text-nowrap" onClick={() => setExpanded(false)} > BRAND GIFT CARD </Nav.Link>
                 <Nav.Link as={Link} to="/shopping" className="text-secondary fs-6 fw-semibold text-nowrap" onClick={() => setExpanded(false)} >  SHOPPING </Nav.Link>
                 <Nav.Link as={Link} to="/travel" className="text-secondary fs-6 fw-semibold text-nowrap" onClick={() => setExpanded(false)} > TRAVEL </Nav.Link>
               </Nav>
-              <ul className="navbar-nav">
+              <ul className="navbar-nav mx-auto">
                 <li>
                   <div className="btn-group">
-                    <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
+                    <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       <i className="fa fa-search"></i>
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end py-0">
                       <li>
                         <div className="input-group">
-                          <input type="text" className="form-control border-0 px-3 py-2" style={{ backgroundColor: "#F5F5F5" }} placeholder="Search" />
+                          <input type="text" className="form-control border border-0 px-3 py-2" style={{ backgroundColor: "#F5F5F5" }} placeholder="Search" />
                         </div>
                       </li>
                     </ul>
@@ -70,7 +70,7 @@ function HeaderMenu() {
                               <a className="btn w-100 text-start fw-medium px-2 py-1 bg-primary-light"
                                 onClick={() => {
                                   localStorage.removeItem("userData");
-                                  setUser(null); // 👈 Logout pachhi user null kariye
+                                  setUser(null);
                                   navigate("/logincheck");
                                 }}>Logout</a>
                             </div>
@@ -80,10 +80,12 @@ function HeaderMenu() {
                     </div>
                   ) : (
                     <div className="d-flex align-items-center">
-                      <a href="/register" className="fw-semibold text-dark text-decoration-none me-2"> Sign up  </a>
+                      <a href="/register" className="nav-link text-secondary text-nowrap fs-6 fw-semibold ms-2"> Sign up  </a>
                       <span className="mx-1">|</span>
-                      <a href="/logincheck" className="fw-semibold text-dark text-decoration-none ms-2"> Login  </a>
+                      <a href="/logincheck" className="nav-link text-secondary text-nowrap fs-6 fw-semibold ms-2"> Login  </a>
                     </div>
+
+
                   )}
                 </li>
 
