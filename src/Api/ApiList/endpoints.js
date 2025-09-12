@@ -6,6 +6,10 @@ const Endpoints = {
     GET_NEW_REGISTRATION_OTP: "Registration_api/Registration2",
     GET_VERIFY_REGISTRATION_OTP: "Registration_api/Registration_new",
     GET_LOGIN_OTP: 'LoginOtp',
+    GET_ALL_SHOPPING_PRODUCT: 'Product/Get_all_product',
+    GET_BRANDS_LIST: 'Order/Get_brands_list',
+    GET_BRAND_GIFT_CARD: "woohoo/ProductsList",
+
     /// not working
     GET_API_LOG: "Getapilog",
     BANNER: "Getbannerlist",

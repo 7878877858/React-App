@@ -5,6 +5,8 @@ import LazyImage from "../../assets/js/LazyImage";
 import Swal from "sweetalert2";
 import { getLoginOtp } from "../../Api/ApiList/List";
 import { useLocation, useNavigate } from "react-router-dom";
+import { setApiToken } from '../../utils/authToken'
+
 const LoginOtp = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -47,6 +49,10 @@ const LoginOtp = () => {
 
             if (res.status === "1") {
                 localStorage.setItem("userData", JSON.stringify(res.data));
+                const token = res.data.apitoken;
+                console.log("Password API Response token:", token);
+                if (token) setApiToken(token);
+
                 Swal.fire({ icon: "success", title: "Login Success" }).then(() => {
                     navigate("/"); // Go to dashboard
                 });

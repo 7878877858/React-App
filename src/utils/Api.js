@@ -1,10 +1,16 @@
 import axios from "axios";
 
-const API = axios.create({
+export const API = axios.create({
   baseURL: "https://tradgo.in/appapi4/",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-export default API;
+export const API2 = axios.create({
+  baseURL: "https://tradgo.in/Shopping/",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+

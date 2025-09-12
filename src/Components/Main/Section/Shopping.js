@@ -32,7 +32,7 @@ const products = [
     }
 
 ];
-export default function Shopping() {
+export default function Shopping({ data = [], loading }) {
     const handleServiceClick = () => {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         let storeLink = "https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN";
@@ -43,7 +43,15 @@ export default function Shopping() {
 
         window.open(storeLink, "_blank"); // open in new tab
     };
-
+    const productColors = ['#F9F9F9', '#F4F4F4', '#EAEAEA', '#DDDDDD'];
+    const productsToShow = data.length > 0
+        ? data.map((item, index) => ({
+            icon: item.product_image,
+            name: item.brand_name,
+            text: item.description || "",
+            color: productColors[index % productColors.length]
+        }))
+        : products;
     return (
         <>
             <section className="container my-5 ">
@@ -54,18 +62,29 @@ export default function Shopping() {
                     </h1>
                     <p className='text-center text-muted mb-5'>Experience a seamless, secure, and smart shopping journey. From electronics to essentials, We brings quality products, unbeatable prices, and fast delivery — all in one platform.</p>
                     <div className="row" id="shopping_product_container">
-                        {products.map((item, index) => (
-                            <div key={index} className="col-12 col-md-6 col-lg-3 p-0 d-flex align-items-stretch">
-                                <div className="card text-start rounded-0 border border-0" style={{ backgroundColor: item.color, width: "100%" }} >
-                                    <LazyImage src={item.icon} className="card-img-top" alt={item.name} loading="lazy" />
-                                    <div className="card-body d-flex flex-column">
-                                        <h5 className="card-title fs-3">{item.name}</h5>
-                                        <p className="card-text fs-6 mb-2 text-ellipsis-3">{item.text}</p>
-                                        <a href="/" className="btn border border-dark mt-auto align-self-start" onClick={handleServiceClick} > Shop Now </a>
+                        {loading ? (
+                            <p>Loading products...</p>
+                        ) : (
+                            productsToShow.map((item, index) => (
+                                <div key={index} className="col-12 col-md-6 col-lg-3 p-0 d-flex align-items-stretch">
+                                    <div className="card text-start rounded-0 border border-0"
+                                        style={{ backgroundColor: item.color, width: "100%" }}>
+                                        <LazyImage src={item.icon} className="card-img-top" alt={item.name} loading="lazy" style={{ width: "50px%"}}/>
+                                        <div className="card-body d-flex flex-column">
+                                            <h5 className="card-title fs-3">{item.name}</h5>
+                                            <div
+                                                className="card-text fs-6 mb-2 text-ellipsis-3"
+                                                dangerouslySetInnerHTML={{ __html: item.text }}
+                                            ></div>
+                                            <a href="/" className="btn border border-dark mt-auto align-self-start"
+                                                onClick={handleServiceClick}>
+                                                Shop Now
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                 </div>
             </section>

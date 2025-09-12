@@ -25,7 +25,7 @@ const Shopping = () => {
                 <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
                 <link rel="canonical" href="https://tradgo.in" />
             </Helmet>
-            <ShoppingPreHeader />
+            {/* <ShoppingPreHeader /> */}
             <ShoppinHeader />
             <Carousel />
             <CategorySlider />

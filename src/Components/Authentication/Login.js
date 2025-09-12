@@ -6,7 +6,7 @@ import '../../assets/css/auth.css'
 import '../../assets/css/style.css'
 import { getLoginPassword } from '../../Api/ApiList/List'
 import Swal from 'sweetalert2'
-import { setAuthToken } from '../../utils/authToken'
+import { setApiToken } from '../../utils/authToken'
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Api/Authentication/AuthContext";
 
@@ -31,13 +31,15 @@ const Login = () => {
             console.log("Password API Response:", res);
 
             if (res.status === "1") {
-                const token = res.login_token;
-                if (token) setAuthToken(token);
-
+         
                 if (res.statuscode === "OTP") {
                     navigate("/otp", { state: { mobileNo, password, loginResponse: res } });
                     return;
                 }
+                       const token = res.data.apitoken;
+                    console.log("Password API Response token:", token);
+                if (token) setApiToken(token);
+
                 Swal.fire({
                     icon: "success",
                     title: "Password Verified",

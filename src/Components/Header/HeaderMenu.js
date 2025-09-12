@@ -11,14 +11,14 @@ function HeaderMenu() {
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
   const [setProfileOpen] = useState(false);
-  const { user, profilePicUrl, setUser } = useAuth();
+  const { user, profilePicUrl, setUser ,resetApp} = useAuth();
   return (
     <>
-      <header className="sticky">
+      <div className="sticky">
         <Navbar expand="lg" bg="white" variant="light" fixed="top" className="shadow-sm" expanded={expanded} onToggle={(isExpanded) => setExpanded(isExpanded)} style={{ top: "0px" }}  >
           <Container>
             <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
-              <LazyImage src={tradgo_sp} alt="tradgo" style={{ width: "120px" }} />
+              <LazyImage src={tradgo_sp} alt="tradgo" className="web-logo" />
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarNav" />
@@ -71,7 +71,9 @@ function HeaderMenu() {
                                 onClick={() => {
                                   localStorage.removeItem("userData");
                                   setUser(null);
-                                  navigate("/logincheck");
+                                  localStorage.clear(); 
+                                   resetApp();  
+                                  window.location.href = "/logincheck"; 
                                 }}>Logout</a>
                             </div>
                           </div>
@@ -93,7 +95,7 @@ function HeaderMenu() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </header>
+      </div>
     </>
   );
 }

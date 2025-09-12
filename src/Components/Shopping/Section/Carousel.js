@@ -53,7 +53,7 @@ const Carousel = () => {
             <div
                 className="container carousel-inner d-flex align-items-center"
                 id="productCarouselInner"
-                style={{ minHeight: "500px" }}
+                style={{minHeight: "500px"}}
             >
                 {slides.map((slide, index) => {
                     const isActive = index === 0 ? "active" : "";

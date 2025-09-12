@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const LazyImage = ({ src, alt, className, ...props }) => {
+const LazyImage = ({ src, alt, className = "", fallback, ...props }) => {
   const imgRef = useRef();
 
   useEffect(() => {
@@ -8,8 +8,16 @@ const LazyImage = ({ src, alt, className, ...props }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          img.src = img.dataset.src; // move data-src -> src
-          img.onload = () => img.classList.add("loaded");
+          const realSrc = img.dataset.src;
+          if (realSrc) {
+            img.src = realSrc;
+            img.onload = () => img.classList.add("loaded");
+            if (fallback) {
+              img.onerror = () => (img.src = fallback);
+            }
+          } else if (fallback) {
+            img.src = fallback;
+          }
           observer.unobserve(img);
         }
       });
@@ -20,13 +28,14 @@ const LazyImage = ({ src, alt, className, ...props }) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [fallback]);
 
   return (
     <img
       ref={imgRef}
+      src={fallback || ""}         // fallback hoy to default set
       data-src={src}
-      alt={alt}
+      alt={alt || "image"}
       className={`lazyload ${className}`}
       {...props}
     />

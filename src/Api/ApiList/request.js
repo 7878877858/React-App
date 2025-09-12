@@ -1,6 +1,7 @@
-import API from "../../utils/Api";
+import{ API,API2 } from "../../utils/Api";
 import { getDeviceId } from "../../utils/getDeviceId";
 import { getAuthToken } from "../../utils/authToken";
+import { getApiToken } from "../../utils/authToken";
 
 export const postRequest = async (url, data) => {
   try {
@@ -29,10 +30,61 @@ export const postRequest2 = async (url, data) => {
     const appVersion = "116";    // hardcoded or dynamic
     const language = "en";       // hardcoded or dynamic
     const token = getAuthToken();
-    console.log(token)
+   console.log("token : "+token)
+    console.log("deviceId : "+deviceId)
     const response = await API.post(url, data, {
       headers: {
         login_token: token,
+        device_id: deviceId,
+        app_version: appVersion,
+        Accept: "application/json",
+        Language: language,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error(`POST ${url} error:`, error);
+    throw error;
+  }
+};
+export const postRequest3 = async (url, data) => {
+  try {
+    const deviceId = getDeviceId();
+    const appVersion = "116";    // hardcoded or dynamic
+    const language = "en";       // hardcoded or dynamic
+    const token = getApiToken();
+    console.log("api token : "+token)
+    console.log("deviceId : "+deviceId)
+
+    const response = await API2.post(url, data, {
+      headers: {
+        token: token,
+        device_id: deviceId,
+        app_version: appVersion,
+        Accept: "application/json",
+        Language: language,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error(`POST ${url} error:`, error);
+    throw error;
+  }
+};
+export const postRequest4 = async (url, data) => {
+  try {
+    const deviceId = getDeviceId();
+    const appVersion = "116";    // hardcoded or dynamic
+    const language = "en";       // hardcoded or dynamic
+    const token = getApiToken();
+    console.log("api token : "+token)
+    console.log("deviceId : "+deviceId)
+
+    const response = await API.post(url, data, {
+      headers: {
+        token: token,
         device_id: deviceId,
         app_version: appVersion,
         Accept: "application/json",

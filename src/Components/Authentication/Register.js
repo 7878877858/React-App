@@ -1,6 +1,7 @@
 import React from 'react'
 import loginimg from '../../assets/image/tradgo.svg'
 import CommanAuthImg from '../../assets/image/svg0.svg'
+import LazyImage from '../../assets/js/LazyImage'
 const Register = () => {
   return (
     <div>
@@ -65,7 +66,7 @@ const Register = () => {
                 </div>
             </div>
             <div className="d-none d-md-block col-md-4 col-lg-5">
-                <img src={CommanAuthImg} alt="" className="wrapper-img"/>
+                <LazyImage src={CommanAuthImg} alt="" className="wrapper-img"/>
             </div>
         </div>
     </div>

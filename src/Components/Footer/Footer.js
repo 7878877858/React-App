@@ -45,12 +45,12 @@ function Footer() {
                                     <h4>Install App</h4>
                                     <a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN"
                                         target="_blank" rel="noreferrer">
-                                        <LazyImage src={play_store} alt="app_store" className="app_store_LazyImage pb-2" />
+                                        <LazyImage src={play_store} alt="app_store" className="app_store_img pb-2 mx-auto loaded" />
                                     </a>
 
                                     <a href="https://apps.apple.com/in/app/tradgo-recharge-bill-payment/id6478166235"
                                         target="_blank" rel="noreferrer">
-                                        <LazyImage src={app_store} alt="play_store" className="play_store_LazyImage" />
+                                        <LazyImage src={app_store} alt="play_store" className="play_store_img mx-auto loaded" />
                                     </a>
                                 </div>
                                 <div className="d-flex flex-column">
