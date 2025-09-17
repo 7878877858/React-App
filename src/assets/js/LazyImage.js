@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const LazyImage = ({ src, alt, className = "", fallback, ...props }) => {
-  const imgRef = useRef();
+export default function LazyImage({ src, alt, className = "", fallback, ...props }) {
+  const imgRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
@@ -9,15 +10,13 @@ const LazyImage = ({ src, alt, className = "", fallback, ...props }) => {
         if (entry.isIntersecting) {
           const img = entry.target;
           const realSrc = img.dataset.src;
+
           if (realSrc) {
             img.src = realSrc;
-            img.onload = () => img.classList.add("loaded");
-            if (fallback) {
-              img.onerror = () => (img.src = fallback);
-            }
           } else if (fallback) {
             img.src = fallback;
           }
+
           observer.unobserve(img);
         }
       });
@@ -33,13 +32,17 @@ const LazyImage = ({ src, alt, className = "", fallback, ...props }) => {
   return (
     <img
       ref={imgRef}
-      src={fallback || ""}         // fallback hoy to default set
+      src={fallback || ""} // fallback hoy to default
       data-src={src}
       alt={alt || "image"}
-      className={`lazyload ${className}`}
+      className={`${className} ${loaded ? "loaded" : ""}`}
+      onLoad={() => setLoaded(true)}
+      onError={(e) => {
+        if (fallback) e.target.src = fallback;
+      }}
+      loading="lazy"
+      draggable="false"
       {...props}
     />
   );
-};
-
-export default LazyImage;
+}

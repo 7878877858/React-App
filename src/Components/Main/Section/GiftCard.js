@@ -425,32 +425,37 @@ export default function Giftcard({ giftCardData = [], loading }) {
         <p className="text-center text-muted mb-5">Buy Gift Cards, Save Big!</p>
 
         <div className="multi-carousel-container" id="multiCarousel">
-          
-                    <div className="multi-carousel-inner" id="carouselInner">
-                        {loading ? (
-                            <p>Loading products...</p>
-                        ) : (
-                            carouselItems.slice(0,15).map((item, i) => (
-                                <div className="multi-carousel-item text-center p-3" key={i}>
-                                    <div className="img-container position-relative">
-                                        {/* Lazy loaded image */}
-                                        <LazyImage
-                                            src={item.image_mobile || item.icon} // dynamic API image or fallback
-                                            alt={item.name}
-                                            className="img-fluid"
-                                        />
-                                        <div className="fs-5 mb-0 mb-lg-2 discount-badge position-absolute">
-                                            Flat {item.dis}% OFF
 
-                                        </div>
-
-                                    </div>
-                                    <p className="fw-semibold">{item.name}</p>
-                                    {/* <LazyImage src={item.icon} alt={item.name} className="img-fluid" /> */}
-                                </div>
-                            ))
-                        )}
+          <div className="multi-carousel-inner" id="carouselInner">
+            {loading ? (
+              Array.from({ length: 15 }).map((_, i) => (
+                <div className="multi-carousel-item text-center p-3" key={i}>
+                  <div className="img-container position-relative placeholder-glow">
+                    <div className="w-100" style={{ height: "120px", background: "#f0f0f0", borderRadius: "8px" }}></div>
+                  </div>
+                  <p className="fw-semibold placeholder mt-2" style={{ width: "60%", margin: "0 auto" }}>
+                    &nbsp;
+                  </p>
+                </div>
+              ))
+            ) : (
+              carouselItems.slice(0, 15).map((item, i) => (
+                <div className="multi-carousel-item text-center p-3" key={i}>
+                  <div className="img-container position-relative">
+                    <LazyImage
+                      src={item.image_mobile || item.icon}
+                      alt={item.name}
+                      className="img-fluid"
+                    />
+                    <div className="fs-5 mb-0 mb-lg-2 discount-badge position-absolute">
+                      Flat {item.dis}% OFF
                     </div>
+                  </div>
+                  <p className="fw-semibold">{item.name}</p>
+                </div>
+              ))
+            )}
+          </div>
 
           <button className="multi-carousel-control-prev" id="prevBtn">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>

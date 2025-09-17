@@ -15,7 +15,8 @@ import LoginCheck from "./Components/Authentication/LoginCheck";
 import LoginOtp from "./Components/Authentication/LoginOtp";
 import { AuthProvider } from "./Api/Authentication/AuthContext";
 import Register from "./Components/Authentication/Register";
-import Shopping from "./Components/Shopping/Shopping";
+import ProductDetailsWrapper from "./Components/Shopping/ProductDetails";
+import ShoppingLayout from "./Components/Shopping/Shopping";
 function App() {
   return (
     <Router>
@@ -26,12 +27,13 @@ function App() {
 }
 function MainLayout() {
   const location = useLocation();
- const hideLayoutRoutes = [
+  const hideLayoutRoutes = [
     "/login",
     "/register",
     "/otp",
     "/logincheck",
-    "/shopping" 
+    "/shopping",
+
   ];
   const hideLayout = hideLayoutRoutes.some(route =>
     location.pathname.startsWith(route)
@@ -53,11 +55,28 @@ function MainLayout() {
           <Route path="/logincheck" element={<LoginCheck />} />
           <Route path="/otp" element={<LoginOtp />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/shopping" element={<Shopping/>}/>
+          <Route path="/shopping/*" element={<ShoppingRoutes />} />
         </Routes>
         {!hideLayout && <Footer />}
       </AuthProvider>
     </>
+  );
+}
+
+function ShoppingRoutes() {
+  return (
+    <Routes>
+      {/* Shopping dashboard layout */}
+      <Route path="/" element={<ShoppingLayout />}>
+        {/* Optional default home inside shopping */}
+        <Route index element={<div>Featured Products</div>} />
+        {/* Product details */}
+        <Route
+          path="ProductDetails/:productId/:combinationId"
+          element={<ProductDetailsWrapper />}
+        />
+      </Route>
+    </Routes>
   );
 }
 export default App;

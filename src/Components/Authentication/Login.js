@@ -47,7 +47,7 @@ const Login = () => {
                 }).then(() => {
                     localStorage.setItem("userData", JSON.stringify(res.data));
                     setUser(res.data);
-                    navigate("/");
+                    window.location.href = "/";
                 });
             } else {
                 Swal.fire({

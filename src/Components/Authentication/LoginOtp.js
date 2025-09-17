@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { getLoginOtp } from "../../Api/ApiList/List";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setApiToken } from '../../utils/authToken'
+import { useAuth } from "../../Api/Authentication/AuthContext";
 
 const LoginOtp = () => {
     const location = useLocation();
@@ -17,6 +18,7 @@ const LoginOtp = () => {
     console.log("Mobile:", mobileNo);
     console.log("Password:", password);
     console.log("Login Response:", loginResponse);
+    const { setUser } = useAuth();
     const handleChange = (e, index) => {
         const value = e.target.value;
         if (/[^0-9]/.test(value)) return;
@@ -54,7 +56,8 @@ const LoginOtp = () => {
                 if (token) setApiToken(token);
 
                 Swal.fire({ icon: "success", title: "Login Success" }).then(() => {
-                    navigate("/"); // Go to dashboard
+                setUser(res.data);
+                    window.location.href = "/";
                 });
             } else {
                 Swal.fire({ icon: "error", title: "Invalid OTP", text: res.message });
@@ -88,11 +91,12 @@ const LoginOtp = () => {
                                     <input
                                         key={i}
                                         type="text"
-                                        className="form-control otp-input fs-3 text-center mx-1"
+                                        className="form-control otp-input fs-3 text-center mx-1 "
                                         maxLength="1"
                                         ref={(el) => (inputs.current[i] = el)}
                                         onChange={(e) => handleChange(e, i)}
                                         onKeyDown={(e) => handleKeyDown(e, i)}
+                                        autoFocus={i === 0}
                                     />
                                 ))}
                             </div>

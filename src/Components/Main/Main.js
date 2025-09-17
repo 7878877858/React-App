@@ -2,7 +2,6 @@ import '../../assets/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../../assets/css/main.css';
 import '../../assets/css/snow_fall.css';
-
 import Hero from "../../Components/Main/Section/Hero";
 import RechargeBillPayments from "../../Components/Main/Section/RechargeBillPayments";
 import Features from "./Section/Features";
@@ -11,8 +10,7 @@ import GoldMembership from './Section/GoldMembership';
 import ReferEarn from './Section/ReferEarn';
 import Testimonials from './Section/Testimonials';
 import Giftcard from './Section/GiftCard';
-import Shopping from './Section/Shopping';
-
+import ShoppingMain from './Section/MainShoppingSection';
 import { Helmet } from "react-helmet";
 import { useEffect, useState, useRef } from "react";
 import { get_all_product, Get_brands_list, Get_brand_gift_card } from '../../Api/ApiList/List';
@@ -129,7 +127,7 @@ useEffect(() => {
             <RechargeBillPayments />
             <Features />
             <Giftcard giftCardData={giftCardData} loading={loading} />
-            <Shopping data={shoppingData} loading={loading} />
+            <ShoppingMain data={shoppingData} loading={loading} />
             <Travel />
             <GoldMembership />
             <ReferEarn />

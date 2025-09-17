@@ -90,7 +90,7 @@ function Features() {
                     <div className="hero-image" data-aos="zoom-in" data-aos-delay="300"
                     >
                       <div className="image-wrapper">
-                        <LazyImage src={item.src} alt={item.alt} className="operator-img-mobile img-fluid float-end pe-0 pe-lg-3" />
+                        <LazyImage src={item.src} alt={item.alt} className="operator-img-mobile img-fluid float-end pe-0 pe-lg-3" style={{ minHeight: "280px" }} />
                       </div>
                     </div>
                   </div>

@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
     useEffect(() => {
         document.title = "Privacy Policy - TradGo – Recharge & Bill Payment";           
     }, []);
-    const [openIndex, setOpenIndex] = useState(null); 
+   const [openIndex, setOpenIndex] = useState(0); 
 
     const toggleAccordion = (index) => {
         setOpenIndex(openIndex === index ? null : index);

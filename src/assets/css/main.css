@@ -270,6 +270,7 @@ img.loaded {
 .operator-img {
     width: 52px;
     height: 52px;
+    object-fit: contain;
 }
 
 .operator-img-mobile {
@@ -297,14 +298,35 @@ img.loaded {
 /* -------------------- Article / Features End -------------------- */
 
 /* -------------------- Gift Card Section Start -------------------- */
-
-
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+  animation: shimmer 1.4s infinite;
+  background-size: 1000px 100%;
+}
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
 .img-container {
   position: relative;
-  border-radius: 1rem;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* fix height ratio */
+  background-color: #f8f8f8; /* soft placeholder background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
-
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.img-container img.loaded {
+  opacity: 1; /* smooth fade in */
+}
 .discount-badge {
   position: absolute;
   bottom: 10px;
@@ -386,10 +408,14 @@ img.loaded {
 
 /* Image container with dynamic height */
 .giftcard_section .img-container {
-    border-radius: 1.5rem;
-    /* height: var(--carousel-height, 80vh); */
-    overflow: hidden;
     position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: #f8f8f8; /* placeholder bg */
+    aspect-ratio: 5 / 3; /* reserve fixed height for all cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* Profile dropdown */
 .profile-dropdown:hover .dropdown-menu {
@@ -427,22 +453,19 @@ img.loaded {
 /* Image styling */
 .giftcard_section .img-container img,
 #carouselInner img {
-    /* height: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
     pointer-events: none;
-    user-drag: none;
     aspect-ratio: 500/323;
     width: 100%;
     -webkit-user-drag: none;
-    transition: transform 0.3s ease; */
-    width: 100%;
-    height: auto;       /* Maintain natural height */
-    object-fit: contain; /* Ensures full image is visible */
-    object-position: center;
-    aspect-ratio: auto;
+    transition: transform 0.3s ease;
+   
 }
-
+.giftcard_section .img-container img.loaded {
+    opacity: 1; /* fade in only when loaded */
+}
 .giftcard_section .img-container:hover img {
     transform: translateZ(0) scale(1.02);
 }

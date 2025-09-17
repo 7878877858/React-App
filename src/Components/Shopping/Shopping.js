@@ -8,11 +8,22 @@ import ProductList from './Section/ProductList'
 import MultiProductSection from './Section/MultiProductSection'
 import '../../assets/vendor/bootstrap/css/bootstrap.min.css';
 import { Helmet } from "react-helmet";
-
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
 const Shopping = () => {
+   const location = useLocation();
+
+    // Check if current path is exactly '/shopping'
+    const isDashboardHome = location.pathname === "/shopping";
+    const navigate = useNavigate();
+    // useEffect(() => {
+    //     if (location.state?.productId && location.state?.combinationId) {
+    //         navigate(`/shopping/ProductDetails/${location.state.productId}/${location.state.combinationId}`);
+    //     }
+    // }, [location.state, navigate]);
     return (
         <>
-         <Helmet>
+            <Helmet>
                 <title>Tradgo | Shopping</title>
                 <meta name="description" content="TradGo – Fast and secure mobile recharge & bill payment app. Recharge prepaid, pay postpaid, DTH, electricity, gas, and water bills online." />
                 <meta name="keywords" content="Mobile Recharge Online, Online Bill Payment, Prepaid Recharge, Postpaid Bill Payment, DTH Recharge Online, Electricity Bill Payment, Gas Bill Payment, Water Bill Payment, TradGo Recharge App, Secure Online Recharge, Recharge Offers, Cashback on Recharge" />
@@ -26,11 +37,28 @@ const Shopping = () => {
                 <link rel="canonical" href="https://tradgo.in" />
             </Helmet>
             {/* <ShoppingPreHeader /> */}
-            <ShoppinHeader />
+            {/* <ShoppinHeader />
             <Carousel />
             <CategorySlider />
             <ProductList />
             <MultiProductSection />
+            <Outlet />
+            <ShoppingFooter /> */}
+            <ShoppinHeader />
+
+            {/* Only show dashboard content on /shopping */}
+            {isDashboardHome && (
+                <>
+                    <Carousel />
+                    <CategorySlider />
+                    <ProductList />
+                    <MultiProductSection />
+                </>
+            )}
+
+            {/* Outlet renders ProductDetailsWrapper */}
+            <Outlet />
+
             <ShoppingFooter />
         </>
 

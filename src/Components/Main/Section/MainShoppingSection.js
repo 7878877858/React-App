@@ -5,6 +5,7 @@ import cable from '../../../assets/image/Main_style/assets/image/product/smartwa
 import "../../../assets/css/main.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import LazyImage from '../../../assets/js/LazyImage';
+import { useNavigate } from 'react-router-dom';
 const products = [
     {
         icon: headphones,
@@ -32,7 +33,9 @@ const products = [
     }
 
 ];
-export default function Shopping({ data = [], loading }) {
+export default function MainShoppingSection({ data = [], loading }) {
+    const navigate = useNavigate();
+
     const handleServiceClick = () => {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         let storeLink = "https://play.google.com/store/apps/details?id=com.tradgo&hl=en_IN";
@@ -43,15 +46,28 @@ export default function Shopping({ data = [], loading }) {
 
         window.open(storeLink, "_blank"); // open in new tab
     };
+   
+
     const productColors = ['#F9F9F9', '#F4F4F4', '#EAEAEA', '#DDDDDD'];
     const productsToShow = data.length > 0
-        ? data.map((item, index) => ({
-            icon: item.product_image,
-            name: item.brand_name,
-            text: item.description || "",
-            color: productColors[index % productColors.length]
-        }))
+        ? data.map((item, index) => {
+            console.log("Raw Product:", item); // full product log ma
+            return {
+                id: item.product_id,             // 👈 product_id add
+                combinationId: item.combination_id, // 👈 combination_id add
+                name: item.brand_name,
+                icon: item.product_image,
+                text: item.description || "",
+                color: productColors[index % productColors.length]
+            };
+        })
         : products;
+
+    console.log("Final ProductsToShow:", productsToShow);
+     const handleShopNow = (item) => {
+        console.log("details",item);
+        navigate(`/shopping/ProductDetails/${item.id}/${item.combinationId}`);
+    };
     return (
         <>
             <section className="container my-5 ">
@@ -69,15 +85,15 @@ export default function Shopping({ data = [], loading }) {
                                 <div key={index} className="col-12 col-md-6 col-lg-3 p-0 d-flex align-items-stretch">
                                     <div className="card text-start rounded-0 border border-0"
                                         style={{ backgroundColor: item.color, width: "100%" }}>
-                                        <LazyImage src={item.icon} className="card-img-top" alt={item.name} loading="lazy" style={{ width: "50px%"}}/>
+                                        <LazyImage src={item.icon} className="card-img-top" alt={item.name} loading="lazy" style={{ width: "50px%" }} />
                                         <div className="card-body d-flex flex-column">
                                             <h5 className="card-title fs-3">{item.name}</h5>
                                             <div
                                                 className="card-text fs-6 mb-2 text-ellipsis-3"
                                                 dangerouslySetInnerHTML={{ __html: item.text }}
                                             ></div>
-                                            <a href="/" className="btn border border-dark mt-auto align-self-start"
-                                                onClick={handleServiceClick}>
+                                            <a className="btn border border-dark mt-auto align-self-start"
+                                                onClick={() => handleShopNow(item)}>
                                                 Shop Now
                                             </a>
                                         </div>

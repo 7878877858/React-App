@@ -4,17 +4,17 @@ import boat109 from "../../../assets/image/shopping/product/boAt_Rockerz_109_Wir
 import boat450 from "../../../assets/image/shopping/product/boAt_Rockerz_450_14_Pro.png";
 import noiseBuzz from "../../../assets/image/shopping/product/Noise_ColorFit_Icon_Buzz.png";
 import LazyImage from "../../../assets/js/LazyImage";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   const [liked, setLiked] = useState({});
-
+const navigate = useNavigate();
   const toggleLike = (id) => {
     setLiked((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const product_view = (product_id, combination_id) => {
-    console.log("View product:", product_id, "Combination:", combination_id);
-    // navigate or open modal
+   navigate(`/shopping/ProductDetails/${product_id}/${combination_id}`);
   };
 
   const products = [
